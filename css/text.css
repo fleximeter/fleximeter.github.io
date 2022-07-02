@@ -43,12 +43,23 @@ td p {
     padding-top: 4px;
 }
 
-.documentation h2 {
-    text-align: center;
+.code {
+    font-family: 'Roboto Mono';
+    font-size: 80%;
 }
 
-.documentation h3 {
-    margin-right: 100px;
+.article h2 {
+    padding-bottom: 10px;
+}
+
+.article h3 {
+    margin: 0 0 0 0;
+    padding: 0 0 10px 0;
+}
+
+.sidebar h3 {
+    margin: 0 0 0 0;
+    padding: 0 0 5px 0 ;
 }
 
 .sidebar p {

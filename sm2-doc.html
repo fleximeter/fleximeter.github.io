@@ -17,13 +17,31 @@
         </nav>
 
         <div id="sm2Div">
-            <h2 class="documentation">SetManipulator</h2>
             <div class="article">
-                <h3>1. Commands for all collections</h3>
+                <h2>2. Command List</h2>
+                <p>
+                    Commands are displayed in verbose form, followed by a short form in parentheses. Obviously, a user will prefer the short form 
+                    for efficiency. If you use a command that is unavailable, the program will display an error message. (For example, you cannot 
+                    display an interval-class vector for an ordered pcseg, or a twelve-tone matrix for an unordered pcset.)
+                </p><p>
+                    Pitch classes are displayed in integer notation (0123456789AB). While the program always displays A and B in uppercase, pitch-class 
+                    input is not case-sensitive. Microtonal pitch-classes are displayed as 2-digit integers (00, 01, 02, ..., 21, 22, 23). Pitches are 
+                    displayed as integers, where middle C is 0, pitches below middle C are negative, and pitches above middle C are positive. When 
+                    entering pitch-classes, individual pcs should not be separated by space or comma. When entering pitches or microtonal pitch-classes, 
+                    individual pitches should be separated by a comma and no space. For example, 59B is a pc-string and -5,0,10,15 is a p-string. 
+                </p><p>
+                    When working with unordered pitch-class collections, pcsets do not need to be in the prime form for their set-classes. However, all 
+                    transformations are performed on the current pcset. If you want all transformations to be relative to the prime form of a set-class, 
+                    you will need to load a prime form either by entering it manually using the Load command, or automatically using the Load Prime command.
+                </p><p>
+                    Commands marked with a * may be followed by a pc-string or p-string. The only commands that change the collection currently in memory 
+                    are the Load commands; therefore, a command like info 015 will not change the set that is currently being stored.
+                </p>    
+                <h3>2.1. Commands for all collections</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Info, N</p>
+                            <p class="command">*info, n</p>
                         </td>
                         <td>
                             <p>
@@ -33,7 +51,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Load, L</p>
+                            <p class="command">*load, l</p>
                         </td>
                         <td>
                             <p>
@@ -43,7 +61,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Search, H</p>
+                            <p class="command">*search, h</p>
                         </td>
                         <td>
                             <p>
@@ -55,11 +73,11 @@
                         </td>
                     </tr>
                 </table>
-                <h3>2. Commands for csegs</h3>
+                <h3>2.2. Commands for csegs</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Matrix, MX</p>
+                            <p class="command">*matrix, mx</p>
                         </td>
                         <td>
                             <p>
@@ -71,7 +89,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Load Prime, LP</p>
+                            <p class="command">*load prime, lp</p>
                         </td>
                         <td>
                             <p>
@@ -81,11 +99,11 @@
                         </td>
                     </tr>
                 </table>
-                <h3>3. Commands for Ordered collections</h3>
+                <h3>2.3. Commands for Ordered collections</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">BIP</p>
+                            <p class="command">bip</p>
                         </td>
                         <td>
                             <p>
@@ -95,7 +113,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Complement, C</p>
+                            <p class="command">*complement, c</p>
                         </td>
                         <td>
                             <p>
@@ -105,7 +123,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">IMB</p>
+                            <p class="command">imb</p>
                         </td>
                         <td>
                             <p>
@@ -115,7 +133,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Intervals, INT</p>
+                            <p class="command">*intervals, int</p>
                         </td>
                         <td>
                             <p>
@@ -126,7 +144,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Subsegs, S</p>
+                            <p class="command">*subsegs, s</p>
                         </td>
                         <td>
                             <p>
@@ -136,7 +154,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Validate Row Generator, VRG</p>
+                            <p class="command">*validate row renerator, vrg</p>
                         </td>
                         <td>
                             <p>
@@ -146,22 +164,22 @@
                         </td>
                     </tr>
                 </table>
-                <h3>4. Commands for pcsets</h3>
+                <h3>2.4. Commands for pcsets</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Angle</p>
+                            <p class="command">*angle</p>
                         </td>
                         <td>
                             <p>
-                                Calculate the angle  between two pcsets. You can provide the two pcsets after the Angle 
+                                Calculate the angle<sup>1</sup> between two pcsets. You can provide the two pcsets after the Angle 
                                 command, separated by a space. Otherwise, you will be prompted to enter the pcsets.
                             </p>
                         </td>
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">Calculate, CC</p>
+                            <p class="command">calculate, cc</p>
                         </td>
                         <td>
                             <p>
@@ -173,7 +191,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Complement, C</p>
+                            <p class="command">*complement, c</p>
                         </td>
                         <td>
                             <p>
@@ -183,7 +201,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">Complement Prime, CP</p>
+                            <p class="command">complement prime, cp</p>
                         </td>
                         <td>
                             <p>
@@ -193,7 +211,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*K</p>
+                            <p class="command">*k</p>
                         </td>
                         <td>
                             <p>
@@ -203,7 +221,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Kh</p>
+                            <p class="command">*kh</p>
                         </td>
                         <td>
                             <p>
@@ -213,7 +231,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Info, N</p>
+                            <p class="command">*info, n</p>
                         </td>
                         <td>
                             <p>
@@ -224,7 +242,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Intersect Max, IX</p>
+                            <p class="command">*intersect max, ix</p>
                         </td>
                         <td>
                             <p>
@@ -235,7 +253,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Interval-Class Vector, ICV</p>
+                            <p class="command">*interval-class vector, icv</p>
                         </td>
                         <td>
                             <p>
@@ -245,7 +263,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Load Prime, LP</p>
+                            <p class="command">*load prime, lp</p>
                         </td>
                         <td>
                             <p>
@@ -257,7 +275,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Subsets Prime, SP</p>
+                            <p class="command">*subsets prime, sp</p>
                         </td>
                         <td>
                             <p>
@@ -268,7 +286,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Union Compact, UC</p>
+                            <p class="command">*union compact, uc</p>
                         </td>
                         <td>
                             <p>
@@ -279,7 +297,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Z-Relation (Z)</p>
+                            <p class="command">*z-relation, z</p>
                         </td>
                         <td>
                             <p>
@@ -288,11 +306,11 @@
                         </td>
                     </tr>
                 </table>
-                <h3>5. Commands for rows</h3>
+                <h3>2.5. Commands for rows</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">Load Random, LR</p>
+                            <p class="command">load random, lr</p>
                         </td>
                         <td>
                             <p>
@@ -302,7 +320,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">Load Random AIR, LAIR</p>
+                            <p class="command">load random air, lair</p>
                         </td>
                         <td>
                             <p>
@@ -312,7 +330,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">Matrix, MX</p>
+                            <p class="command">matrix, mx</p>
                         </td>
                         <td>
                             <p>
@@ -321,11 +339,11 @@
                         </td>
                     </tr>
                 </table>
-                <h3>6. Commands for unordered collections</h3>
+                <h3>2.6. Commands for unordered collections</h3>
                 <table class="definitions">
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Intersect, IN</p>
+                            <p class="command">*intersect, in</p>
                         </td>
                         <td>
                             <p>
@@ -337,7 +355,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Subsets, S</p>
+                            <p class="command">*subsets, s</p>
                         </td>
                         <td>
                             <p>
@@ -347,7 +365,7 @@
                     </tr>
                     <tr>
                         <td class="command_col">
-                            <p class="command">*Union, U</p>
+                            <p class="command">*union, u</p>
                         </td>
                         <td>
                             <p>
@@ -358,10 +376,253 @@
                         </td>
                     </tr>
                 </table>
+                <h3>2.7. General commands</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode c</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter contour mode, for working with c-pitches. Contour mode automatically enables ordered mode as well.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode forte, mode f</p>
+                        </td>
+                        <td>
+                            <p>
+                                Prefer Forte names for pc set-classes
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode l</p>
+                        </td>
+                        <td>
+                            <p>
+                                Calculate set-class prime forms by packing to the left
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode prime, mode n</p>
+                        </td>
+                        <td>
+                            <p>
+                                Prefer prime form names for pc set-classes. The program defaults to this mode on startup.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode o</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter ordered mode.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode om</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter ordered mode for 24-tone microtonal pitch-classes.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode op</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter ordered mode for pitches.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode opc</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter ordered mode for 12-tone pitch-classes.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode p</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter pitch mode.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode pc</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter pitch-class mode. The program defaults to this mode on startup.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode r</p>
+                        </td>
+                        <td>
+                            <p>
+                                Calculate set-class prime forms by packing from the right. The program defaults to this mode on startup.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode u</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter unordered mode. The program defaults to this mode on startup.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode um</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter unordered mode for 24-tone microtonal pitch-classes.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode up</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter unordered mode for pitches.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">mode upc</p>
+                        </td>
+                        <td>
+                            <p>
+                                Enter unordered mode for 12-tone pitch-classes.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">quit, q</p>
+                        </td>
+                        <td>
+                            <p>
+                                Exit the program.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>2.8. Transformations (case sensitive)</h3>
+                <p>
+                    Transformations may be performed together as a command string. The last transformation in the string will be performed first, 
+                    then the next-to-last transformation, and so forth. You must include an integer with the <span class="code">M</span> and 
+                    <span class="code">T</span> transformations. <span class="code">M</span> is not 
+                    automatically interpreted as M<sub>5</sub>. For example, the transformation string <span class="code">M7T9I</span> first inverts 
+                    the collection, then transposes it by 9, and finally multiplies it by 7. If the collection is unordered, the result of the 
+                    transformation will be displayed in sorted order. 
+                    Also note that all transformations are performed mod 12. Therefore, <span class="code">T85</span> produces the same result as 
+                    <span class="code">T1</span>. Transpositions of pcsets are 
+                    performed on the provided set &ndash; if you intend to transform relative to the prime form of a set-class, you must load a prime form. 
+                    Negative numbers are not supported.
+                </p><p>
+                    Multiple transformation strings may be performed simultaneously. For example, if you enter <span class="code">T5M5I</span> 
+                    <span class="code">IM7T5I</span> at the prompt, both transformation strings will be evaluated individually, and the results will 
+                    be displayed in a list. This is useful if you wish to compare the results of different transformation strings.
+                </p><p>
+                    You can also provide a specific collection as the final item in a list of transformation strings. For example, 
+                    transforms {08A1} by T<sub>5</sub>M<sub>5</sub>I. 
+                    If you are in unordered pc-mode, <span class="code">08A1</span> will be evaluated as a pcset. In ordered pc-mode, 
+                    <span class="code">08A1</span> will be evaluated as a pcseg, and so forth. 
+                    This feature makes it possible to transform subsidiary collections without changing what is currently stored in memory.
+                </p>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">I</p>
+                        </td>
+                        <td>
+                            <p>
+                                Invert (same as M11). This is a TTO.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">M<i>n</i></p>
+                        </td>
+                        <td>
+                            <p>
+                                Multiply. Supports any multiplier that is an integer. This is a TTO if the multiplier is 1, 5, 7, or 11.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">R</p>
+                        </td>
+                        <td>
+                            <p>
+                                Retrograde (ordered collections only)
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">r<i>n</i></p>
+                        </td>
+                        <td>
+                            <p>
+                                Rotate (ordered collections only)
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">T<i>n</i></p>
+                        </td>
+                        <td>
+                            <p>
+                                Transpose. This is a TTO.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>Notes</h3>
+                <p><sup>1</sup>Damon Scott and Eric J. Isaacson, "The Interval Angle: A Similarity Measure for Pitch-Class Sets," 
+                    <i>Perspectives of New Music</i> 36:2 (Summer, 1998), 107-142.</p>
             </div>
             <aside class="sidebar">
-                <p><a href="sm1-doc.html">Introduction</a></p>
-                <p><a href="sm2-doc.html">Command List</a></p>
+                <h3>Documentation for SetManipulator</h3>
+                <hr/>
+                <p><a href="sm1-doc.html">1. Introduction</a></p>
+                <p><a href="sm2-doc.html">2. Command List</a></p>
             </aside>
         </div>
 
