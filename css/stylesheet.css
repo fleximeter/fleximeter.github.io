@@ -1,16 +1,69 @@
 @import url('fonts.css');
 
+body {
+    background-color: #111111;
+    border: none;
+    clear: both;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
+header {
+    border: none;
+    background-color: #BBBBBB;
+    margin: 0 0 0 0;
+    padding: 10px 15px 10px 15px;
+}
+
+header h1 {
+    font-family: 'Gentium Book Plus';
+    color: #888888;
+    padding: 0 0 0 0;
+    text-align: center;
+}
+
+nav {
+    border: none;
+    background-color: #222222;
+    margin: 0 0 0 0;
+    padding: 5px 5px 5px 5px;
+}
+
+nav a {
+    color: #888888;
+    font-family: 'Gentium Book Plus';
+    font-size: 13pt;
+    margin: 0 0 0 15px;
+    padding: 0 0 0 0;
+}
+
 h1 {
     font-family: 'Gentium Book Plus';
     color: #888888;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 
 p {
-    font-family: 'Gentium Book Plus';
     color: #222222;
+    font-family: 'Gentium Book Plus';
+    margin: 0;
+    padding: 0;
 }
 
 a {
     font-family: 'Gentium Book Plus';
     color: #0000cc;
+}
+
+#navDiv {
+    margin: auto;
+    width: 230pt;
+}
+
+#mainDiv {
+    background-color: #EEEEEE;
+    height: 500px;
+    margin: 0 100px 0 100px;
+    padding: 10px 10px 10px 10px
 }
