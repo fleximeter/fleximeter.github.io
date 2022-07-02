@@ -32,6 +32,29 @@ nav a {
     padding: 0 0 0 0;
 }
 
+td p {
+    padding: 0 0 0 0;
+}
+
+.command {
+    font-family: 'Roboto Mono';
+    font-size: 10pt;
+    font-weight: 444;
+    padding-top: 4px;
+}
+
+.documentation h2 {
+    text-align: center;
+}
+
+.documentation h3 {
+    margin-right: 100px;
+}
+
+.sidebar p {
+    margin: 0 0 0 0;
+}
+
 h1 {
     color: #666666;
     margin: 0 0 0 0;
@@ -48,6 +71,7 @@ p {
     color: #222222;
     margin: 0 0 15px 0;
     padding: 0;
+    vertical-align: inherit;
 }
 
 sub {
@@ -61,4 +85,8 @@ a {
 
 a b em i strong {
     font-size: inherit;
+}
+
+td {
+    vertical-align: top;
 }

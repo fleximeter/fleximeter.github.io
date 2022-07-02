@@ -25,3 +25,17 @@
     font-weight: bold;
     font-style: italic;
 }
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/Roboto_Mono/RobotoMono-VariableFont_wght.ttf');
+    font-weight: 1 999;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Roboto Mono';
+    src: url('fonts/Roboto_Mono/RobotoMono-Italic-VariableFont_wght.ttf');
+    font-weight: 1 999;
+    font-style: italic;
+}

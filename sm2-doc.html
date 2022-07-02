@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fleximeter</title>
+        <link href="css/stylesheet.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header><h1><a href="index.html">Welcome to fleximeter's Github</a></h1></header>
+        <nav>
+            <div id="navDiv">
+                <a href="pctheory.html">pctheory</a>
+                <a href="set-manipulator.html">SetManipulator</a>
+                <a href="doc.html">Documentation</a>
+                <a href="about.html">About</a>
+                <a href="https://jeffreymartincomposer.com/">Composer Website</a>
+            </div>
+        </nav>
+
+        <div id="sm2Div">
+            <h2 class="documentation">SetManipulator</h2>
+            <div class="article">
+                <h3>1. Commands for all collections</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Info, N</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the current collection.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Load, L</p>
+                        </td>
+                        <td>
+                            <p>
+                                Input a new collection.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Search, H</p>
+                        </td>
+                        <td>
+                            <p>
+                                Input pitches or pitch-classes to find all transformations that produce a collection with the provided pitches 
+                                or pitch-classes. Order only matters for pcsegs and psegs. If you include a pitch (or pitches) after the 
+                                “Search” command, it will search for the provided input. Otherwise, you will enter continuous search mode,
+                                where you can perform multiple searches &ndash; type &apos;q&apos; to quit.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>2. Commands for csegs</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Matrix, MX</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display COM matrix. If no parameters are provided, the COM matrix will compare the current cseg with itself. If one 
+                                parameter is provided, that cseg will be compared with the current cseg. If two parameters are provided, those two 
+                                csegs will be compared with each other.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Load Prime, LP</p>
+                        </td>
+                        <td>
+                            <p>
+                                Convert current cseg to cseg-class prime form. If you include pitches after the LP command, the LP command loads a new cseg 
+                                and converts it to the prime form of its cseg-class.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <aside class="sidebar">
+                <p><a href="sm1-doc.html">Introduction</a></p>
+                <p><a href="sm2-doc.html">Command List</a></p>
+            </aside>
+        </div>
+
+        <footer>
+            <div id="footerDiv">
+                <p>
+                    Copyright &copy;2022 by Jeffrey Martin. All rights reserved. <a href="https://jeffreymartincomposer.com/">https://jeffreymartincomposer.com/</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
