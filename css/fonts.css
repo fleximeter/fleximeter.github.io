@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Gentium Book Plus';
+    src: url('fonts/Gentium_Book_Plus/GentiumBookPlus-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gentium Book Plus';
+    src: url('fonts/Gentium_Book_Plus/GentiumBookPlus-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Gentium Book Plus';
+    src: url('fonts/Gentium_Book_Plus/GentiumBookPlus-Italic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Gentium Book Plus';
+    src: url('fonts/Gentium_Book_Plus/GentiumBookPlus-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
