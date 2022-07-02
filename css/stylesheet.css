@@ -53,23 +53,25 @@ h1 {
 p {
     color: #222222;
     font-family: 'Gentium Book Plus';
-    margin: 0;
+    margin: 0 0 15px 0;
     padding: 0;
 }
 
 a {
     font-family: 'Gentium Book Plus';
     color: #0000cc;
+    text-decoration: inherit;
 }
 
 #navDiv {
     margin: auto;
-    width: 230pt;
+    width: 330pt;
 }
 
 #mainDiv {
     background-color: #EEEEEE;
-    height: 500px;
-    margin: 0 100px 0 100px;
-    padding: 20px 20px 20px 20px
+    height: 800px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    width: 700px;
 }
