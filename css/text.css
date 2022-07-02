@@ -2,6 +2,11 @@ html, body, div, span, h1, h2, h3, h4, h5, h6, p, a {
     font-family: 'Gentium Book Plus';
 }
 
+footer a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 footer p {
     color: #BBBBBB;
     font-size: 10pt;
