@@ -81,6 +81,283 @@
                         </td>
                     </tr>
                 </table>
+                <h3>3. Commands for Ordered collections</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">BIP</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the BIP for cardinality n. The cardinality may be provided as an argument.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Complement, C</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display complement (pcsegs only). Complements are provided as unordered pcsets.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">IMB</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display list of consecutive imbricated set-classes of cardinality n. The cardinality may be provided as an argument.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Intervals, INT</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the interval sequence of the collection. This command may be followed by a 
+                                transformation name to get the interval sequence of that transformation.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Subsegs, S</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display all subsegs of the current collection.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Validate Row Generator, VRG</p>
+                        </td>
+                        <td>
+                            <p>
+                                Determines if an interval sequence in p- or pc-space would produce a segment with no 
+                                duplicated pitch-classes. Useful for validating rows or subsegs of rows.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>4. Commands for pcsets</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Angle</p>
+                        </td>
+                        <td>
+                            <p>
+                                Calculate the angle  between two pcsets. You can provide the two pcsets after the Angle 
+                                command, separated by a space. Otherwise, you will be prompted to enter the pcsets.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">Calculate, CC</p>
+                        </td>
+                        <td>
+                            <p>
+                                A continuous search mode for pcset-class prime forms. This feature is useful if you 
+                                are not sure how to organize pitch-classes for analysis. Type &apos;q&apos; to quit. The last 
+                                pcset entered is stored in memory.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Complement, C</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display complement.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">Complement Prime, CP</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display complement set-class in prime form.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*K</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display set-class complex K.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Kh</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display set-class complex Kh.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Info, N</p>
+                        </td>
+                        <td>
+                            <p>
+                                For all pcsets, this command displays the prime form, Forte name, Carter name, interval-class vector, 
+                                complement prime form, and Z-relation prime form (if any).
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Intersect Max, IX</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the intersection of two sets. Rather than merely intersecting both sets, the second set will 
+                                be transposed and/or inverted to create the largest intersection possible.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Interval-Class Vector, ICV</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display interval-class vector for current set.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Load Prime, LP</p>
+                        </td>
+                        <td>
+                            <p>
+                                Convert current pcset to set-class prime form. If you include pitches after the LP command, the LP 
+                                command loads a new set and converts it to the prime form of its set-class. For example, LP 83B9 
+                                loads set-class [0137], one of the two all-interval tetrachord set-classes.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Subsets Prime, SP</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display the prime form of each set-class contained as a subset of the current pcset, along with 
+                                the number of occurrences of each set-class.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Union Compact, UC</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the union of two sets. Rather than merely combining both sets, the second set will be 
+                                transposed and/or inverted to create the most compact union possible.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Z-Relation (Z)</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display Z-related set-class in prime form.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>5. Commands for rows</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">Load Random, LR</p>
+                        </td>
+                        <td>
+                            <p>
+                                Loads a random twelve-tone pcseg (row).
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">Load Random AIR, LAIR</p>
+                        </td>
+                        <td>
+                            <p>
+                                Loads a random all-interval twelve-tone row.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">Matrix, MX</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display matrix of twelve-tone row.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <h3>6. Commands for unordered collections</h3>
+                <table class="definitions">
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Intersect, IN</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the intersection of two sets. If only one set is provided with the command, 
+                                that set is intersected with the current set. If two sets are provided, those two are intersected. 
+                                If no sets are provided, you will be prompted to enter two sets to intersect.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Subsets, S</p>
+                        </td>
+                        <td>
+                            <p>
+                                Display all subsets of the current collection.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="command_col">
+                            <p class="command">*Union, U</p>
+                        </td>
+                        <td>
+                            <p>
+                                Displays the union of two sets. If only one set is provided with the command, that set is 
+                                combined with the current set. If two sets are provided, those two are combined. If no sets 
+                                are provided, you will be prompted to enter two sets to combine.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <aside class="sidebar">
                 <p><a href="sm1-doc.html">Introduction</a></p>

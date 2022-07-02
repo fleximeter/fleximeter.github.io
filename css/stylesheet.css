@@ -71,7 +71,7 @@ td {
     margin: auto;
     padding: 5px 20px 5px 20px;
     text-align: center;
-    width: 700px;
+    width: 900px;
 }
 
 #mainDiv {
@@ -84,7 +84,7 @@ td {
 
 #sm2Div {
     background-color: #EEEEEE;
-    height: 2000px;
+    height: 3000px;
     margin: auto;
     padding: 20px 20px 20px 20px;
     width: 900px;
