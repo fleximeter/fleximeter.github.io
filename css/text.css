@@ -58,3 +58,7 @@ a {
     color: #0000cc;
     text-decoration: inherit;
 }
+
+a b em i strong {
+    font-size: inherit;
+}
