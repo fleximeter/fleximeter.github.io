@@ -52,6 +52,33 @@ td {
     table-layout: fixed;
 }
 
+.footerDiv{
+    background-color: #333333;
+    margin: auto;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    width: 900px;
+}
+
+.indent1 p {
+    margin-left: 15px;
+}
+
+.mainDiv {
+    background-color: #EEEEEE;
+    height: auto;
+    margin: auto;
+    overflow: auto;
+    padding: 20px 20px 20px 20px;
+    width: 900px;
+}
+
+.navDiv {
+    margin: auto;
+    width: 420pt;
+}
+
+
 .sidebar {
     background-color: #BBBBBB;
     float: left;

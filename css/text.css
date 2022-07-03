@@ -36,6 +36,10 @@ td p {
     padding: 0 0 0 0;
 }
 
+.article h5 {
+    font-family: 'Roboto Mono';
+}
+
 .command {
     font-family: 'Roboto Mono';
     font-size: 10pt;
