@@ -85,7 +85,14 @@ td {
 
 #mainDiv {
     background-color: #EEEEEE;
-    height: 800px;
+    margin: auto;
+    padding: 20px 20px 20px 20px;
+    width: 900px;
+}
+
+#sm1Div {
+    background-color: #EEEEEE;
+    height: 450px;
     margin: auto;
     padding: 20px 20px 20px 20px;
     width: 900px;
@@ -93,7 +100,7 @@ td {
 
 #sm2Div {
     background-color: #EEEEEE;
-    height: 4800px;
+    height: 4700px;
     margin: auto;
     padding: 20px 20px 20px 20px;
     width: 900px;
