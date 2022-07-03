@@ -62,6 +62,21 @@ td p {
     padding-top: 4px;
 }
 
+.pyClass {
+    color: #548f65;
+    font-family: 'Roboto Mono';
+}
+
+.pyDataType {
+    color: #0000cc;
+    font-family: 'Roboto Mono';
+}
+
+.pyStr {
+    color: #2c912c;
+    font-family: 'Roboto Mono';
+}
+
 .sidebar h3 {
     margin: 0 0 0 0;
     padding: 0 0 5px 0 ;
