@@ -51,7 +51,6 @@ td p {
 }
 
 .codeReference h5 {
-    font-family: 'Roboto Mono';
     padding: 0 0 0 0;
 }
 
@@ -65,16 +64,19 @@ td p {
 .pyClass {
     color: #548f65;
     font-family: 'Roboto Mono';
+    font-size: 90%;
 }
 
-.pyDataType {
+.pyKeyword {
     color: #0000cc;
     font-family: 'Roboto Mono';
+    font-size: 90%;
 }
 
 .pyStr {
     color: #2c912c;
     font-family: 'Roboto Mono';
+    font-size: 90%;
 }
 
 .sidebar h3 {
