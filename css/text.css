@@ -36,22 +36,6 @@ td p {
     padding: 0 0 0 0;
 }
 
-.article h5 {
-    font-family: 'Roboto Mono';
-}
-
-.command {
-    font-family: 'Roboto Mono';
-    font-size: 10pt;
-    font-weight: 444;
-    padding-top: 4px;
-}
-
-.code {
-    font-family: 'Roboto Mono';
-    font-size: 80%;
-}
-
 .article h2 {
     padding-bottom: 10px;
 }
@@ -59,6 +43,23 @@ td p {
 .article h3 {
     margin: 0 0 0 0;
     padding: 0 0 10px 0;
+}
+
+.code {
+    font-family: 'Roboto Mono';
+    font-size: 80%;
+}
+
+.codeReference h5 {
+    font-family: 'Roboto Mono';
+    padding: 0 0 0 0;
+}
+
+.command {
+    font-family: 'Roboto Mono';
+    font-size: 10pt;
+    font-weight: 444;
+    padding-top: 4px;
 }
 
 .sidebar h3 {

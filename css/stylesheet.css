@@ -9,6 +9,12 @@ body {
     padding: 0 0 0 0;
 }
 
+footer {
+    border: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
+}
+
 header {
     border: none;
     background-color: #BBBBBB;
@@ -16,17 +22,17 @@ header {
     padding: 25px 15px 10px 15px;
 }
 
+hr {
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
 nav {
     border: none;
     background-color: #222222;
     margin: 0 0 0 0;
     padding: 5px 5px 5px 5px;
-}
-
-footer {
-    border: none;
-    margin: 0 0 0 0;
-    padding: 0 0 0 0;
 }
 
 tr {
@@ -40,6 +46,11 @@ td {
 }
 
 .article {
+    float: right;
+    width: 70%;
+}
+
+.codeReference {
     float: right;
     width: 70%;
 }
@@ -88,52 +99,9 @@ td {
 
 .sidebar hr {
     border-top: 2px solid #888888;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-}
-
-.subchunk {
-    width: 100%;
 }
 
 .term {
     float: left;
     width: 35%;
-}
-
-#footerDiv{
-    background-color: #333333;
-    margin: auto;
-    padding: 5px 20px 5px 20px;
-    text-align: center;
-    width: 900px;
-}
-
-#mainDiv {
-    background-color: #EEEEEE;
-    margin: auto;
-    padding: 20px 20px 20px 20px;
-    width: 900px;
-}
-
-#sm1Div {
-    background-color: #EEEEEE;
-    height: 450px;
-    margin: auto;
-    padding: 20px 20px 20px 20px;
-    width: 900px;
-}
-
-#sm2Div {
-    background-color: #EEEEEE;
-    height: 4700px;
-    margin: auto;
-    padding: 20px 20px 20px 20px;
-    width: 900px;
-}
-
-#navDiv {
-    margin: auto;
-    width: 420pt;
 }
