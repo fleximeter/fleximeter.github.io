@@ -55,6 +55,10 @@ td {
     width: 70%;
 }
 
+.codeIndent1Reference {
+    margin-left: 20px;
+}
+
 .command_col {
     width: 100px;
 }

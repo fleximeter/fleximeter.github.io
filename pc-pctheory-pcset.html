@@ -19,9 +19,34 @@
         <div class="mainDiv">
             <div class="codeReference">
                 <h2>2.5. pctheory.pcset</h2>
+                <h5>class SetClass12</h5>
                 <p>
-                    Under construction
+                    Represents a pitch-class set-class with elements drawn from the twelve-note equally-tempered chromatic scale.
+                    Notes are represented with <span class="code">PitchClass12</span> objects.
                 </p>
+                <div class="codeIndent1Reference">
+                    <h5>SetClass12.calculate_prime_form(pcset: set, weight_from_right: bool = True)</h5>
+                    <p>
+                        Calculates the prime form of a provided pcset. Pcsets are Python <span class="code">set</span>
+                        objects containing <span class="code">PitchClass12</span> elements. The 
+                        <span class="code">weight_from_right</span> parameter determines if the prime form will be packed
+                        from the right (Rahn) or packed to the left (Forte). This produces different prime forms in only
+                        a few set-classes.
+                    </p>
+                    <h5>SetClass12.contains_abstract_subset(self, sc: SetClass12)</h5>
+                    <p>
+                        Determines if a set-class <span class="code">sc</span> is an abstract subset of the current
+                        <span class="code">SetClass12</span> object. Returns <span class="code">True</span> or
+                        <span class="code">False</span>.
+                    </p>
+                    
+                </div>
+                <h5>class SetClass24</h5>
+                <p>
+                    Represents a pitch-class set-class with elements drawn from the 24-note equally-tempered microtonal scale.
+                    Notes are represented with <span class="code">PitchClass24</span> objects.
+                </p>
+
             </div>
             <aside class="sidebar">
                 <h3>Documentation for pctheory</h3>
