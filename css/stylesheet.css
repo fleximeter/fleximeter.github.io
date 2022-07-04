@@ -50,13 +50,9 @@ td {
     width: 70%;
 }
 
-.codeReference {
-    float: right;
-    width: 70%;
-}
-
 .codeIndent1Reference {
     margin-left: 20px;
+    margin-bottom: 50px;
 }
 
 .command_col {
@@ -94,14 +90,16 @@ td {
 }
 
 .returnType {
-    background-color: #bbbbbb;
-    margin: 0 10px 0 5px;
+    background-color: #cfcfcf;
+    margin-left: 10px;
+    margin-right: 5px;
     padding: 3px 3px 3px 3px;
 }
 
 .returnType2 {
-    background-color: #bbbbbb;
-    margin: 0 5px 0 5px;
+    background-color: #cfcfcf;
+    margin-left: 5px;
+    margin-right: 5px;
     padding: 3px 3px 3px 3px;
 }
 
