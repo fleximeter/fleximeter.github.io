@@ -19,6 +19,10 @@
         <div class="mainDiv">
             <div class="codeReference">
                 <h2>2.5. pctheory.pcset</h2>
+                <p>This module contains classes and functions for working with pcsets, or sets of
+                    pitch-classes. A pcset is represented as a <span class="pyKeyword">set</span>
+                    of <span class="pyClass">PitchClass12</span> or <span class="pyClass">PitchClass24</span>
+                    elements.</p>
                 <h4><span class="pyKeyword">class</span> <span class="pyClass">SetClass12</span></h4>
                 <p>
                     Represents a pitch-class set-class with elements drawn from the twelve-note equally-tempered chromatic scale.
@@ -26,53 +30,53 @@
                 </p>
                 <div class="codeIndent1Reference">
                     <h4><span class="code pyClass">SetClass12</span> read-only properties</h4>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.derived_core</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.derived_core</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Whether or not the current <span class="code pyClass">SetClass12</span> is one of Elliott Carter&apos;s &ldquo;derived core&rdquo; harmonies,
                         as specified by John Link.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.ic_vector</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.ic_vector</span> <span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         The ic vector of the current <span class="code pyClass">SetClass12</span> as a <span class="code pyKeyword">list</span> of 
                         <span class="code pyKeyword">int</span>s.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.ic_vector_string</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.ic_vector_string</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         The ic vector of the current <span class="code pyClass">SetClass12</span> as a <span class="code pyKeyword">str</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.is_z_relation</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.is_z_relation</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Whether or not the current <span class="code pyClass">SetClass12</span> is Z-related to another class.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_carter</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_carter</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         Returns the Carter number for the current <span class="code pyClass">SetClass12</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_forte</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_forte</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         Returns the Forte name for the current <span class="code pyClass">SetClass12</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_morris</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_morris</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         Returns the Morris name for the current <span class="code pyClass">SetClass12</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_prime</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.name_prime</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         Returns the prime form name for the current <span class="code pyClass">SetClass12</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.num_forte</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.num_forte</span> <span class="returnType pyKeyword">int</span></h5>
                     <p>
                         Returns the Forte number (the part after the hyphen) for the current <span class="code">SetClass12</span>.
                     </p>
 
                     <h4><span class="code pyClass">SetClass12</span> properties</h4>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.pcset</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.pcset</span> <span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span></h5>
                     <p>
                         The pcset of the current <span class="code pyClass">SetClass12</span>. If you assign a pcset
                         to this property, the <span class="code pyClass">SetClass12</span> will automatically calculate
                         its prime form and update the <span class="code pyClass">SetClass12</span><span class="code">.pcset</span> properly.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.weight_right</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.weight_right</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Whether or not the prime form should be calculated by packing from the right.
                     </p>   
@@ -81,7 +85,7 @@
                     <p>
                         Creates a new <span class="code pyClass">SetClass12</span>
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.calculate_prime_form(pcset: </span><span class="pyKeyword">set</span><span class="code">, weight_from_right: </span><span class="pyKeyword">bool</span><span class="code"> = </span><span class="pyKeyword">True</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.calculate_prime_form(pcset: </span><span class="pyKeyword">set</span><span class="code">, weight_from_right: </span><span class="pyKeyword">bool</span><span class="code"> = </span><span class="pyKeyword">True</span><span class="code">)</span> <span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
                     <p>
                         Calculates the prime form of a provided pcset. Pcsets are Python <span class="code">set</span>
                         objects containing <span class="code pyClass">PitchClass12</span> elements. The 
@@ -89,38 +93,38 @@
                         from the right (Rahn) or packed to the left (Forte). This produces different prime forms in only
                         a few set-classes.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.contains_abstract_subset(sc: </span><span class="pyClass">SetClass12</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.contains_abstract_subset(sc: </span><span class="pyClass">SetClass12</span><span class="code">)</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Determines if a set-class <span class="code">sc</span> is an abstract subset of the current
                         <span class="code pyClass">SetClass12</span> object. Returns <span class="code pyKeyword">True</span> or
                         <span class="code pyKeyword">False</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_abstract_complement()</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_abstract_complement()</span> <span class="returnType pyClass">SetClass12</span></h5>
                     <p>
                         Returns the abstract complement of the current <span class="code pyClass">SetClass12</span> object.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_invariance_vector()</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_invariance_vector()</span> <span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         Returns the invariance vector of the current <span class="code pyClass">SetClass12</span> object.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_partition2_subset_classes()</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_partition2_subset_classes()</span> <span class="returnType code">{(<span class="pyClass">SetClass12</span>, <span class="pyClass">SetClass12</span>)}</span></h5>
                     <p>
                         Returns a <span class="code pyKeyword">set</span> of <span class="code pyClass">SetClass12</span> 
                         <span class="code pyKeyword">tuple</span> objects containing all two-partitions of the current
                         set-class. Particularly applicable to the music of Milton Babbitt.
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_subset_classes()</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_subset_classes()</span> <span class="returnType code">{<span class="pyClass">SetClass12</span>}</span></h5>
                     <p>
                         Returns a <span class="code pyKeyword">set</span> of <span class="code pyClass">SetClass12</span> objects
                         representing all set-classes abstractly contained within the current set-class. 
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_z_relation()</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.get_z_relation()</span> <span class="returnType pyClass">SetClass12</span></h5>
                     <p>
                         Returns a <span class="code pyClass">SetClass12</span> object
                         representing the Z-relation of the current set-class. If there is no Z-relation,
                         returns an empty <span class="code pyClass">SetClass12</span> object. 
                     </p>
-                    <h5><span class="pyClass">SetClass12</span><span class="code">.is_valid_name(name: </span><span class="pyKeyword">str</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass12</span><span class="code">.is_valid_name(name: </span><span class="pyKeyword">str</span><span class="code">)</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Determines if a provided set-class name is valid. Valid name types include <span class="code pyStr"><q>[xxx]</q></span> (prime form),
                         <span class="code pyStr"><q>x-x</q></span> (Forte), and <span class="code pyStr"><q>(x-x)[xxx]</q></span> (Morris).
@@ -145,28 +149,28 @@
                 </p>
                 <div class="codeIndent1Reference">
                     <h4><span class="code pyClass">SetClass24</span> read-only properties</h4>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.ic_vector</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.ic_vector</span> <span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         The ic vector of the current <span class="code pyClass">SetClass24</span> as a <span class="code pyKeyword">list</span> of 
                         <span class="code pyKeyword">int</span>s.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.ic_vector_string</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.ic_vector_string</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         The ic vector of the current <span class="code pyClass">SetClass24</span> as a <span class="code pyKeyword">str</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.name_prime</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.name_prime</span> <span class="returnType pyKeyword">str</span></h5>
                     <p>
                         Returns the prime form name for the current <span class="code pyClass">SetClass24</span>.
                     </p>
 
                     <h4><span class="code pyClass">SetClass24</span> properties</h4>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.pcset</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.pcset</span> <span class="returnType code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         The pcset of the current <span class="code pyClass">SetClass24</span>. If you assign a pcset
                         to this property, the <span class="code pyClass">SetClass24</span> will automatically calculate
                         its prime form and update the <span class="code pyClass">SetClass24</span><span class="code">.pcset</span> properly.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.weight_right</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.weight_right</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Whether or not the prime form should be calculated by packing from the right.
                     </p>   
@@ -175,7 +179,7 @@
                     <p>
                         Creates a new <span class="code pyClass">SetClass24</span>
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.calculate_prime_form(pcset: </span><span class="pyKeyword">set</span><span class="code">, weight_from_right: </span><span class="pyKeyword">bool</span><span class="code"> = </span><span class="pyKeyword">True</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.calculate_prime_form(pcset: </span><span class="pyKeyword">set</span><span class="code">, weight_from_right: </span><span class="pyKeyword">bool</span><span class="code"> = </span><span class="pyKeyword">True</span><span class="code">)</span> <span class="returnType code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Calculates the prime form of a provided pcset. Pcsets are Python <span class="code">set</span>
                         objects containing <span class="code pyClass">PitchClass24</span> elements. The 
@@ -183,22 +187,22 @@
                         from the right (Rahn) or packed to the left (Forte). This produces different prime forms in only
                         a few set-classes.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.contains_abstract_subset(sc: </span><span class="pyClass">SetClass24</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.contains_abstract_subset(sc: </span><span class="pyClass">SetClass24</span><span class="code">)</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Determines if a set-class <span class="code">sc</span> is an abstract subset of the current
                         <span class="code pyClass">SetClass24</span> object. Returns <span class="code pyKeyword">True</span> or
                         <span class="code pyKeyword">False</span>.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.get_abstract_complement()</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.get_abstract_complement()</span> <span class="returnType code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Returns the abstract complement of the current <span class="code pyClass">SetClass24</span> object.
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.get_subset_classes()</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.get_subset_classes()</span> <span class="returnType code">{<span class="pyClass">SetClass24</span>}</span></h5>
                     <p>
                         Returns a <span class="code pyKeyword">set</span> of <span class="code pyClass">SetClass24</span> objects
                         representing all set-classes abstractly contained within the current set-class. 
                     </p>
-                    <h5><span class="pyClass">SetClass24</span><span class="code">.is_valid_name(name: </span><span class="pyKeyword">str</span><span class="code">)</span></h5>
+                    <h5><span class="pyClass">SetClass24</span><span class="code">.is_valid_name(name: </span><span class="pyKeyword">str</span><span class="code">)</span> <span class="returnType pyKeyword">bool</span></h5>
                     <p>
                         Determines if a provided set-class name is valid. Valid name types include <span class="code pyStr"><q>[xxx]</q></span> (prime form).
                     </p>
@@ -215,11 +219,11 @@
                         <span class="code">__repr__()</span>, and <span class="code">__str__()</span> 
                     </p>
                 </div>
-                <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span></h5>
+                <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span> <span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                 <p>
                     Gets the complement of a provided pcset. This is not the abstract complement of a set-class.
                 </p>
-                <h5><span class="code">get_corpus(pcset: <span class="pyKeyword">set</span>)</span></h5>
+                <h5><span class="code">get_corpus(pcset: <span class="pyKeyword">set</span>)</span> <span class="returnType code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass24</span>)}</span></h5>
                 <p>
                     Gets all TTO transformations of a provided pcset, as a <span class="pyKeyword">set</span>.
                 </p>

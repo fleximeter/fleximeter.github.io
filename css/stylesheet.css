@@ -93,6 +93,17 @@ td {
     width: 420pt;
 }
 
+.returnType {
+    background-color: #bbbbbb;
+    margin: 0 10px 0 5px;
+    padding: 3px 3px 3px 3px;
+}
+
+.returnType2 {
+    background-color: #bbbbbb;
+    margin: 0 5px 0 5px;
+    padding: 3px 3px 3px 3px;
+}
 
 .sidebar {
     background-color: #BBBBBB;
