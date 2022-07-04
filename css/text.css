@@ -50,6 +50,18 @@ td p {
     font-size: 90%;
 }
 
+.code.pyClass {
+    color: #548f65;
+}
+
+.code.pyKeyword {
+    color: #0000cc;
+}
+
+.code.pyStr {
+    color: #2c912c;
+}
+
 .codeReference h4 {
     font-size: 16px;
     padding: 0 0 0 0;
