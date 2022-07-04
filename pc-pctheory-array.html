@@ -27,13 +27,17 @@
                 <div class="codeReference">
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">RotationalArray</span></span></h4>
                     <p>
-                        Represents a Stravinskian rotational array.
+                        Represents a Stravinskian rotational array. A rotational array is a <i>n</i>x<i>n</i>
+                        array, where <i>n</i> is the length of the generating pcseg. Each row <i>i</i> of the
+                        rotational array is rotated to the left <i>i</i> positions, and transposed
+                        so that the first pitch-class is the same as the first pitch-class in the
+                        top row.
                     </p>
                     <div class="codeIndent1Reference">
                         <h4><span class="code pyClass">RotationalArray</span> read-only properties</h4>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.array<span class="returnType">numpy.<span class="pyClass">array</span></span></span></h5>
                         <p>
-                            Gets the rotational array.
+                            Gets the rotational array as a 2D numpy array.
                         </p>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.pcseg<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
                         <p>
@@ -42,24 +46,24 @@
                         <h4><span class="code pyClass">RotationalArray</span> methods</h4>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.at(i: <span class="pyKeyword">int</span>, j: <span class="pyKeyword">int</span>)<span class="returnType"><span class="pyClass">PitchClass12</span></span></span></h5>
                         <p>
-                            Gets the pitch-class in the specified cell of the rotational array.
+                            Gets the pitch-class in the specified cell (<i>i</i>, <i>j</i>) of the rotational array.
                         </p>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.get_column(j: <span class="pyKeyword">int</span>)<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
                         <p>
-                            Gets the column at index j of the rotational array.
+                            Gets the column at index <i>j</i> of the rotational array.
                         </p>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.get_row(i: <span class="pyKeyword">int</span>)<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
                         <p>
-                            Gets the row at index i of the rotational array.
+                            Gets the row at index <i>i</i> of the rotational array.
                         </p>
                         <h5><span class="code"><span class="pyClass">RotationalArray</span>.import_pcseg(pcseg: <span class="pyKeyword">list</span>)</span></h5>
                         <p>
-                            Imports a pcseg and recalculates the <span class="code pyClass">RotationalArray</span>.
+                            Imports a pcseg and generates the <span class="code pyClass">RotationalArray</span>.
                         </p>
                     </div>
                     <h5><span class="code">str_array(array)<span class="returnType pyKeyword">str</span></span></h5>
                     <p>
-                        Converts an array of pitch-classes to a string. The array can be a 2D list or a numpy array.
+                        Converts an array of pitch-classes to a multiline string. The array can be a 2D list or a numpy array.
                     </p>
                     <h5><span class="code">make_array_chain(array, length: <span class="pyKeyword">int</span>)<span class="returnType">[[<span class="pyClass">PitchClass12</span>]]</span></span></h5>
                     <p>
