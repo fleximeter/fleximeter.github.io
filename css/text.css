@@ -50,17 +50,6 @@ td p {
     font-size: 90%;
 }
 
-.code.pyClass {
-    color: #548f65;
-}
-
-.code.pyKeyword {
-    color: #0000cc;
-}
-
-.code.pyStr {
-    color: #2c912c;
-}
 
 .codeReference h4 {
     font-size: 16px;
@@ -86,19 +75,20 @@ td p {
 .pyClass {
     color: #548f65;
     font-family: 'Roboto Mono';
-    font-size: 90%;
 }
 
 .pyKeyword {
     color: #0000cc;
     font-family: 'Roboto Mono';
-    font-size: 90%;
 }
 
 .pyStr {
     color: #2c912c;
     font-family: 'Roboto Mono';
-    font-size: 90%;
+}
+
+.returnType {
+    font-family: 'Roboto Mono';
 }
 
 .sidebar h3 {
