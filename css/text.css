@@ -50,9 +50,9 @@ td p {
     font-size: 90%;
 }
 
-
 .codeReference h4 {
     font-size: 16px;
+    font-weight: 555;
     padding: 0 0 0 0;
     margin-top: 20px;
     margin-bottom: 5px;
@@ -60,6 +60,7 @@ td p {
 
 .codeReference h5 {
     font-size: 15px;
+    font-weight: 555;
     padding: 0 0 0 0;
     margin-top: 25px;
     margin-bottom: 5px;

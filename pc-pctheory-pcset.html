@@ -27,10 +27,11 @@
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">SetClass12</span></span></h4>
                     <p>
                         Represents a pitch-class set-class with elements drawn from the twelve-note equally-tempered chromatic scale.
-                        Notes are represented with <span class="code pyClass">PitchClass12</span> objects.
+                        Notes are represented with <span class="code pyClass">PitchClass12</span> objects. There are 224
+                        set-classes in the chromatic system, including the null set-class.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">SetClass12</span> constructor</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass12</span> constructor</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.__init__(name_tables: <span class="pyKeyword">None</span>, pcset: <span class="pyKeyword">set</span>)</span></h5>
                         <p>
                             Constructs a <span class="code pyClass">SetClass12</span>. If you are working with multiple
@@ -44,10 +45,10 @@
                             a lot of memory. You may also choose to provide a pcset to initialize the 
                             <span class="code pyClass">SetClass12</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass12</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass12</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass12</span>}</span></span></h5>
                         <p>
-                            The pcset of the current <span class="code pyClass">SetClass12</span>. If you assign a pcset
+                            The prime-form pcset of the current <span class="code pyClass">SetClass12</span>. If you assign a pcset
                             to this property, the <span class="code pyClass">SetClass12</span> will automatically calculate
                             its prime form and update the <span class="code pyClass">SetClass12</span><span class="code">.pcset</span> properly.
                         </p>
@@ -55,7 +56,7 @@
                         <p>
                             Whether or not the prime form should be calculated by packing from the right.
                         </p>   
-                        <h4><span class="code pyClass">SetClass12</span> read-only properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass12</span> read-only properties</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.derived_core<span class="returnType pyKeyword">bool</span><span class="code"></span></h5>
                         <p>
                             Whether or not the current <span class="code pyClass">SetClass12</span> is one of Elliott Carter&apos;s &ldquo;derived core&rdquo; harmonies,
@@ -65,7 +66,11 @@
                         <p>
                             The degree of symmetry of the <span class="code pyClass">SetClass12</span>. This is the number of 
                             T<sub><i>n</i></sub> and T<sub><i>n</i></sub>I transformations which will transform a
-                            member of the set-class into itself.
+                            member of the set-class into itself. Many set-classes have a degree of symmetry of 1,
+                            which means that there are 24 pcsets in the set-class. The whole-tone scale has a
+                            degree of symmetry of 12 because there are only two whole-tone scales. The chromatic scale
+                            has a degree of symmetry of 24 because it is invariant under all of the T<sub><i>n</i></sub> and T<sub><i>n</i></sub>I
+                            transformations.
                         </p>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.ic_vector<span class="returnType">[<span class="pyKeyword">int</span>]</span></span></h5>
                         <p>
@@ -100,7 +105,7 @@
                         <p>
                             Returns the Forte number (the part after the hyphen) for the current <span class="code">SetClass12</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass12</span> methods</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass12</span> methods</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.__init__()</span></h5>
                         <p>
                             Creates a new <span class="code pyClass">SetClass12</span>
@@ -154,7 +159,7 @@
                             Loads a set-class into the current <span class="code pyClass">SetClass12</span> object. The name
                             can be in prime-form, Forte, or Morris format.
                         </p>
-                        <h4><span class="code pyClass">SetClass12</span> overloaded special functions</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass12</span> overloaded special functions</span></h4>
                         <p>
                             Overloaded special functions include <span class="code">__eq__()</span>, 
                             <span class="code">__hash__()</span>, <span class="code">__len__()</span>,
@@ -173,21 +178,22 @@
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">SetClass24</span></span></h4>
                     <p>
-                        Represents a pitch-class set-class with elements drawn from the 24-note equally-tempered microtonal scale.
-                        Notes are represented with <span class="code pyClass">PitchClass24</span> objects.
+                        Represents a pitch-class set-class with elements drawn from the twelve-note equally-tempered chromatic scale.
+                        Notes are represented with <span class="code pyClass">PitchClass24</span> objects. There are 352,698
+                        set-classes in the chromatic system, including the null set-class.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">SetClass24</span> constructor</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass24</span> constructor</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.__init__(pcset: <span class="pyKeyword">set</span>)</span></h5>
                         <p>
                             Constructs a <span class="code pyClass">SetClass24</span>. 
                             You may choose to provide a pcset to initialize the 
                             <span class="code pyClass">SetClass24</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass24</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass24</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass24</span>}</span></span></h5>
                         <p>
-                            The pcset of the current <span class="code pyClass">SetClass24</span>. If you assign a pcset
+                            The prime-form pcset of the current <span class="code pyClass">SetClass24</span>. If you assign a pcset
                             to this property, the <span class="code pyClass">SetClass24</span> will automatically calculate
                             its prime form and update the <span class="code pyClass">SetClass24</span><span class="code">.pcset</span> properly.
                         </p>
@@ -195,12 +201,13 @@
                         <p>
                             Whether or not the prime form should be calculated by packing from the right.
                         </p>   
-                        <h4><span class="code pyClass">SetClass24</span> read-only properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass24</span> read-only properties</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.dsym<span class="returnType pyKeyword">int</span><span class="code"></span></h5>
                         <p>
                             The degree of symmetry of the <span class="code pyClass">SetClass24</span>. This is the number of 
                             T<sub><i>n</i></sub> and T<sub><i>n</i></sub>I transformations which will transform a
-                            member of the set-class into itself.
+                            member of the set-class into itself. Many set-classes have a degree of symmetry of 1,
+                            which means that there are 48 pcsets in the set-class.
                         </p><h5><span class="code"><span class="pyClass">SetClass24</span>.ic_vector<span class="returnType">[<span class="pyKeyword">int</span>]</span></span></h5>
                         <p>
                             The ic vector of the current <span class="code pyClass">SetClass24</span> as a <span class="code pyKeyword">list</span> of 
@@ -214,7 +221,7 @@
                         <p>
                             Returns the prime form name for the current <span class="code pyClass">SetClass24</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass24</span> methods</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass24</span> methods</span></h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.__init__()</span></h5>
                         <p>
                             Creates a new <span class="code pyClass">SetClass24</span>
@@ -251,7 +258,7 @@
                             Loads a set-class into the current <span class="code pyClass">SetClass24</span> object. The name
                             can be in prime-form format.
                         </p>
-                        <h4><span class="code pyClass">SetClass24</span> overloaded special functions</h4>
+                        <h4><span class="subhead"><span class="code pyClass">SetClass24</span> overloaded special functions</span></h4>
                         <p>
                             Overloaded special functions include <span class="code">__eq__()</span>, 
                             <span class="code">__hash__()</span>, <span class="code">__len__()</span>,

@@ -36,7 +36,7 @@
                         pcsegs and the operation requested.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">InvarianceMatrix</span> constructor</h4>
+                        <h4><span class="subhead"><span class="code pyClass">InvarianceMatrix</span> constructor</span></h4>
                         <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.__init__(mx_type=<span class="pyStr">&quot;T&quot;</span>, a: <span class="pyKeyword">list</span>, c: <span class="pyKeyword">list</span>)</span></h5>
                         <p>
                             Constructs a <span class="code pyClass">InvarianceMatrix</span>. 
@@ -52,7 +52,7 @@
                             You can also provide pcsegs A and C to the constructor, or you can load them later using the
                             <span class="code">load_matrix()</span> method.
                         </p>
-                        <h4><span class="code pyClass">InvarianceMatrix</span> read-only properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">InvarianceMatrix</span> read-only properties</span></h4>
                         <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.mx<span class="returnType">[<span class="pyKeyword">list</span>]</span></span></h5>
                         <p>
                             Gets the entire invariance matrix.
@@ -69,7 +69,7 @@
                         <p>
                             Gets the pcseg C.
                         </p>
-                        <h4><span class="code pyClass">InvarianceMatrix</span> methods</h4>
+                        <h4><span class="subhead"><span class="code pyClass">InvarianceMatrix</span> methods</span></h4>
                         <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.get_column(j: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
                         <p>
                             Gets the column at index <i>j</i> of the invariance matrix.
@@ -88,7 +88,7 @@
                             pitch-classes as a parameter to this function. This will print only the pcs
                             in the list, which is useful for isolating invariances at specific transpositions.
                         </p>
-                        <h4><span class="code pyClass">InvarianceMatrix</span> overloaded special functions</h4>
+                        <h4><span class="subhead"><span class="code pyClass">InvarianceMatrix</span> overloaded special functions</span></h4>
                         <p>
                             Overloaded special functions include <span class="code">__getitem__()</span>, 
                             <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
@@ -106,12 +106,13 @@
                         <span class="code pyClass">TwelveToneMatrix</span> object.
                     </p>
                     <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">InvarianceMatrix</span> constructor</span></h4>
                         <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.__init__(row=<span class="pyKeyword">None</span>)</span></h5>
                         <p>
                             Constructs a <span class="code pyClass">TwelveToneMatrix</span>. You can provide a row
                             to initialize the matrix.
                         </p>
-                        <h4><span class="code pyClass">TwelveToneMatrix</span> read-only properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">TwelveToneMatrix</span> read-only properties</span></h4>
                         <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.matrix<span class="returnType">[<span class="pyKeyword">list</span>]</span></span></h5>
                         <p>
                             Gets the entire twelve-tone matrix.
@@ -136,7 +137,7 @@
                         <p>
                             Gets the row that represents the row-class in the <span class="code pyClass">TwelveToneMatrix</span>.
                         </p>
-                        <h4><span class="code pyClass">TwelveToneMatrix</span> methods</h4>
+                        <h4><span class="subhead"><span class="code pyClass">TwelveToneMatrix</span> methods</span></h4>
                         <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.get_column(j: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
                         <p>
                             Gets the column at index <i>j</i> of the matrix.
@@ -149,7 +150,7 @@
                         <p>
                             Imports a row and generates the <span class="code pyClass">TwelveToneMatrix</span>.
                         </p>
-                        <h4><span class="code pyClass">TwelveToneMatrix</span> overloaded special functions</h4>
+                        <h4><span class="subhead"><span class="code pyClass">TwelveToneMatrix</span> overloaded special functions</span></h4>
                         <p>
                             Overloaded special functions include <span class="code">__getitem__()</span>, 
                             <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
@@ -171,6 +172,43 @@
                         <span class="code pyClass">PitchClass12</span> or <span class="code pyClass">PitchClass24</span>
                         keys and <span class="code pyKeyword">int</span> values (which represent the index of the
                         pitch-class in the row).
+                    </p>
+                    <h5><span class="code">generate_pcseg12_from_interval_list(interval_list: <span class="pyKeyword">list</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <p>
+                        Generates a chromatic pcseg from an interval list. If the starting pc is <span class="code pyKeyword">None</span>,
+                        a random starting pc will be selected. The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass12</span>.
+                    </p>
+                    <h5><span class="code">generate_pcseg24_from_interval_list(interval_list: <span class="pyKeyword">list</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Generates a microtonal pcseg from an interval list. If the starting pc is <span class="code pyKeyword">None</span>,
+                        a random starting pc will be selected. The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass24</span>.
+                    </p>
+                    <h5><span class="code">generate_random_all_interval_row(name_tables=<span class="pyKeyword">None</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <p>
+                        Generates a random all-interval twelve-tone row. All of the row generators are present in a name table,
+                        which you can generate with the function <span class="code">tables.create_tables_row()</span>.
+                        If no name table is provided, it will be generated automatically. The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass12</span>.
+                    </p>
+                    <h5><span class="code">generate_random_pcseg12(length: <span class="pyKeyword">int</span>, non_duplicative: <span class="pyKeyword">False</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <p>
+                        Generates a random chromatic pcseg. This pcseg will be a row if the length is 12 and it is
+                        nonduplicative.
+                        The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass12</span>.
+                    </p>
+                    <h5><span class="code">generate_random_pcseg24(length: <span class="pyKeyword">int</span>, non_duplicative: <span class="pyKeyword">False</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Generates a random microtonal pcseg.
+                        The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass24</span>.
+                    </p>
+                    <h5><span class="code">generate_random_pcseg_from_pcset(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Generates a pcseg from a provided pcset. The order of the pitch-classes will be random.
+                        This is useful for experimenting with different orderings of a pcset.
                     </p>
                     <h5><span class="code">get_intervals(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
@@ -220,8 +258,9 @@
                     </p>
                     <h5><span class="code">prot(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span></h5>
                     <p>
-                        Generates the protocol pairs of a pcseg. A protocol pair is a pair of pitch-classes (<i>p</i>, <i>q</i>),
-                        such that <i>p</i> comes before <i>q</i> in the pcseg. A complete list of protocol pairs
+                        Generates the protocol pairs of a pcseg. A protocol pair is an ordered pair of pitch-classes (<i>p</i>, <i>q</i>),
+                        such that both <i>p</i> and <i>q</i> are in the pcseg, and 
+                        <i>p</i> comes before <i>q</i> in the pcseg. A complete list of protocol pairs
                         unambiguously defines the ordering of a pcseg.
                     </p>
                     <h5><span class="code">retrograde(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>

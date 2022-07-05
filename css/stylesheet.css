@@ -51,7 +51,7 @@ td {
 }
 
 .codeIndent1Reference {
-    margin-left: 20px;
+    margin-left: 30px;
     margin-bottom: 50px;
 }
 
@@ -112,6 +112,13 @@ td {
 
 .sidebar hr {
     border-top: 2px solid #888888;
+}
+
+.subhead {
+    background-color: #cfcfcf;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 3px 5px 3px 5px;
 }
 
 .term {
