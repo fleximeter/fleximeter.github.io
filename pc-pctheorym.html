@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fleximeter</title>
+        <link href="css/stylesheet.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header><h1><a href="index.html">fleximeter composition and analysis software</a></h1></header>
+        <nav>
+            <div class="navDiv">
+                <a href="pctheory.html">pctheory</a>
+                <a href="set-manipulator.html">SetManipulator</a>
+                <a href="doc.html">Documentation</a>
+                <a href="about.html">About</a>
+                <a href="https://jeffreymartincomposer.com/">Composer Website</a>
+            </div>
+        </nav>
+
+        <div class="mainDiv">
+            <div class="article">
+                <h2>2. pctheory module reference</h2>
+                <p>
+                    The central classes in pctheory are the <span class="code pyClass">Pitch12</span>,
+                    <span class="code pyClass">Pitch24</span>, <span class="code pyClass">PitchClass12</span>,
+                    <span class="code pyClass">PitchClass24</span>,  <span class="code pyClass">OTO</span>,
+                    and  <span class="code pyClass">UTO</span> classes. The <span class="code pyClass">Pitch12</span>,
+                    and <span class="code pyClass">Pitch24</span> classes use integers to represent
+                    pitches: C4 is 0, pitches above C4 have positive numbers, and pitches below C4
+                    have negative numbers. Technically, one could use the same class for both the
+                    chromatic and microtonal systems, but these two classes inherit from
+                    <span class="code pyClass">PitchClass12</span> and <span class="code pyClass">PitchClass24</span>.
+                    This gives each pitch a pitch-class attribute, since all pitches can be associated with a pitch-class.
+                    Therefore, it is necessary to have two separate classes. The <span class="code pyClass">PitchClass12</span>
+                    and <span class="code pyClass">PitchClass24</span> classes, of course, represent pitch-classes
+                    in the traditional way, where 0 is C.
+                </p>
+                <p>
+                    The &ldquo;OTOs&rdquo; (ordered tone operators) and &ldquo;UTOs&rdquo;
+                    (unordered tone operators) require a bit more explanation. They
+                    correspond to the row operators (ROs) and twelve-tone operators (TTOs).
+                    However, a &ldquo;row operator&rdquo; can be used on any pcseg, and
+                    while the microtonal system can use some of the same TTOs as the 
+                    chromatic system, it is oxymoronic to operate on microtonal pitch-classes
+                    with &ldquo;twelve-tone&rdquo; operators. Furthermore, in the microtonal
+                    system, there are twice as many indices of transposition, and twice
+                    as many multiplicative operators. Therefore, the 
+                    <span class="code pyClass">OTO</span> and <span class="code pyClass">UTO</span>
+                    classes represent generalized ordered and unordered standard operations
+                    and can be used with chromatic and microtonal pitch-classes, pcsets, pcsegs,
+                    and posets. The <span class="code pyClass">OTO</span> models an operator
+                    of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub> or 
+                    T<sub><i>n</i></sub>RM<sub><i>m</i></sub>. 
+                    The <span class="code pyClass">UTO</span> models an operator
+                    of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub>.
+                </p>
+            </div>
+            <aside class="sidebar">
+                <h3>Documentation for pctheory</h3>
+                <hr/>
+                <p><a href="pc-pctheory.html">1. Introduction</a></p>
+                <p><a href="pc-pctheorym.html">2. pctheory module reference</a></p>
+                <div class="indent1">
+                    <p><a href="pc-pctheory-array.html">2.1. pctheory.array</a></p>
+                    <p><a href="pc-pctheory-cseg.html">2.2. pctheory.cseg</a></p>
+                    <p><a href="pc-pctheory-group.html">2.3. pctheory.group</a></p>
+                    <p><a href="pc-pctheory-pcseg.html">2.4. pctheory.pcseg</a></p>
+                    <p><a href="pc-pctheory-pcset.html">2.5. pctheory.pcset</a></p>
+                    <p><a href="pc-pctheory-pitch.html">2.6. pctheory.pitch</a></p>
+                    <p><a href="pc-pctheory-poset.html">2.7. pctheory.poset</a></p>
+                    <p><a href="pc-pctheory-pseg.html">2.8. pctheory.pseg</a></p>
+                    <p><a href="pc-pctheory-pset.html">2.9. pctheory.pset</a></p>
+                    <p><a href="pc-pctheory-set_complex.html">2.10. pctheory.set_complex</a></p>
+                    <p><a href="pc-pctheory-tables.html">2.11. pctheory.tables</a></p>
+                    <p><a href="pc-pctheory-tempo.html">2.12. pctheory.tempo</a></p>
+                    <p><a href="pc-pctheory-transformations.html">2.13. pctheory.transformations</a></p>
+                    <p><a href="pc-pctheory-util.html">2.14. pctheory.util</a></p>
+                </div>
+            </aside>
+        </div>
+
+        <footer>
+            <div class="footerDiv">
+                <p>
+                    Copyright &copy;2022 by Jeffrey Martin. All rights reserved. <a href="https://jeffreymartincomposer.com/">https://jeffreymartincomposer.com/</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
