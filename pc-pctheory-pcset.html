@@ -30,6 +30,31 @@
                         Notes are represented with <span class="code pyClass">PitchClass12</span> objects.
                     </p>
                     <div class="codeIndent1Reference">
+                        <h4><span class="code pyClass">SetClass12</span> constructor</h4>
+                        <h5><span class="code"><span class="pyClass">SetClass12</span>.__init__(name_tables: <span class="pyKeyword">None</span>, pcset: <span class="pyKeyword">set</span>)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">SetClass12</span>. If you are working with multiple
+                            <span class="code pyClass">SetClass12</span> objects, you may wish to generate a name table
+                            using the <span class="code">pctheory.tables.create_tables_set()</span> function. This makes
+                            a dictionary of set-class names and pitch name references that can be shared among multiple
+                            <span class="code pyClass">SetClass12</span> objects. If you do not provide a table, one
+                            will be created every time you make a <span class="code pyClass">SetClass12</span> object.
+                            This is not a problem if you are only working with a few objects, but if you need to work
+                            with many <span class="code pyClass">SetClass12</span> objects, the duplicate tables could consume
+                            a lot of memory. You may also choose to provide a pcset to initialize the 
+                            <span class="code pyClass">SetClass12</span>.
+                        </p>
+                        <h4><span class="code pyClass">SetClass12</span> properties</h4>
+                        <h5><span class="code"><span class="pyClass">SetClass12</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass12</span>}</span></span></h5>
+                        <p>
+                            The pcset of the current <span class="code pyClass">SetClass12</span>. If you assign a pcset
+                            to this property, the <span class="code pyClass">SetClass12</span> will automatically calculate
+                            its prime form and update the <span class="code pyClass">SetClass12</span><span class="code">.pcset</span> properly.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">SetClass12</span>.weight_right<span class="returnType pyKeyword">bool</span></span></h5>
+                        <p>
+                            Whether or not the prime form should be calculated by packing from the right.
+                        </p>   
                         <h4><span class="code pyClass">SetClass12</span> read-only properties</h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.derived_core<span class="returnType pyKeyword">bool</span><span class="code"></span></h5>
                         <p>
@@ -69,17 +94,6 @@
                         <p>
                             Returns the Forte number (the part after the hyphen) for the current <span class="code">SetClass12</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass12</span> properties</h4>
-                        <h5><span class="code"><span class="pyClass">SetClass12</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass12</span>}</span></span></h5>
-                        <p>
-                            The pcset of the current <span class="code pyClass">SetClass12</span>. If you assign a pcset
-                            to this property, the <span class="code pyClass">SetClass12</span> will automatically calculate
-                            its prime form and update the <span class="code pyClass">SetClass12</span><span class="code">.pcset</span> properly.
-                        </p>
-                        <h5><span class="code"><span class="pyClass">SetClass12</span>.weight_right<span class="returnType pyKeyword">bool</span></span></h5>
-                        <p>
-                            Whether or not the prime form should be calculated by packing from the right.
-                        </p>   
                         <h4><span class="code pyClass">SetClass12</span> methods</h4>
                         <h5><span class="code"><span class="pyClass">SetClass12</span>.__init__()</span></h5>
                         <p>
@@ -139,7 +153,16 @@
                             Overloaded special functions include <span class="code">__eq__()</span>, 
                             <span class="code">__hash__()</span>, <span class="code">__len__()</span>,
                             <span class="code">__lt__()</span>, <span class="code">__ne__()</span>,
-                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span> 
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can use the <span class="code">==</span>, 
+                            <span class="code">&lt;</span> and <span class="code">!=</span> operators
+                            on <span class="code pyClass">SetClass12</span> objects. The &lt; operator
+                            is implemented to allow sorting using built-in Python functionality. The
+                            <span class="code">len()</span> function is supported, as well as
+                            <span class="code">hash()</span> (which allows you to use 
+                            <span class="code pyClass">SetClass12</span> objects in sets and dictionary keys),
+                            and the <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">SetClass12</span> objects to be printed.
                         </p>
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">SetClass24</span></span></h4>
@@ -148,6 +171,24 @@
                         Notes are represented with <span class="code pyClass">PitchClass24</span> objects.
                     </p>
                     <div class="codeIndent1Reference">
+                        <h4><span class="code pyClass">SetClass24</span> constructor</h4>
+                        <h5><span class="code"><span class="pyClass">SetClass24</span>.__init__(pcset: <span class="pyKeyword">set</span>)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">SetClass24</span>. 
+                            You may choose to provide a pcset to initialize the 
+                            <span class="code pyClass">SetClass24</span>.
+                        </p>
+                        <h4><span class="code pyClass">SetClass24</span> properties</h4>
+                        <h5><span class="code"><span class="pyClass">SetClass24</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass24</span>}</span></span></h5>
+                        <p>
+                            The pcset of the current <span class="code pyClass">SetClass24</span>. If you assign a pcset
+                            to this property, the <span class="code pyClass">SetClass24</span> will automatically calculate
+                            its prime form and update the <span class="code pyClass">SetClass24</span><span class="code">.pcset</span> properly.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">SetClass24</span>.weight_right<span class="returnType pyKeyword">bool</span></span></h5>
+                        <p>
+                            Whether or not the prime form should be calculated by packing from the right.
+                        </p>   
                         <h4><span class="code pyClass">SetClass24</span> read-only properties</h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.ic_vector<span class="returnType">[<span class="pyKeyword">int</span>]</span></span></h5>
                         <p>
@@ -162,17 +203,6 @@
                         <p>
                             Returns the prime form name for the current <span class="code pyClass">SetClass24</span>.
                         </p>
-                        <h4><span class="code pyClass">SetClass24</span> properties</h4>
-                        <h5><span class="code"><span class="pyClass">SetClass24</span>.pcset<span class="returnType">{<span class="pyClass">PitchClass24</span>}</span></span></h5>
-                        <p>
-                            The pcset of the current <span class="code pyClass">SetClass24</span>. If you assign a pcset
-                            to this property, the <span class="code pyClass">SetClass24</span> will automatically calculate
-                            its prime form and update the <span class="code pyClass">SetClass24</span><span class="code">.pcset</span> properly.
-                        </p>
-                        <h5><span class="code"><span class="pyClass">SetClass24</span>.weight_right<span class="returnType pyKeyword">bool</span></span></h5>
-                        <p>
-                            Whether or not the prime form should be calculated by packing from the right.
-                        </p>   
                         <h4><span class="code pyClass">SetClass24</span> methods</h4>
                         <h5><span class="code"><span class="pyClass">SetClass24</span>.__init__()</span></h5>
                         <p>
@@ -215,7 +245,16 @@
                             Overloaded special functions include <span class="code">__eq__()</span>, 
                             <span class="code">__hash__()</span>, <span class="code">__len__()</span>,
                             <span class="code">__lt__()</span>, <span class="code">__ne__()</span>,
-                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span> 
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can use the <span class="code">==</span>, 
+                            <span class="code">&lt;</span> and <span class="code">!=</span> operators
+                            on <span class="code pyClass">SetClass24</span> objects. The &lt; operator
+                            is implemented to allow sorting using built-in Python functionality. The
+                            <span class="code">len()</span> function is supported, as well as
+                            <span class="code">hash()</span> (which allows you to use 
+                            <span class="code pyClass">SetClass24</span> objects in sets and dictionary keys),
+                            and the <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">SetClass24</span> objects to be printed.
                         </p>
                     </div>
                     <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>

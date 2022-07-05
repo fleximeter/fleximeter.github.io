@@ -21,11 +21,176 @@
                 <h2>2.4. pctheory.pcseg</h2>
                 <p>
                     This module contains classes and functions for working with pcsegs. A pcseg is
-                    any permutation of pitch-classes, represented as a <span class="pyKeyword">list</span>
-                    of <span class="pyClass">PitchClass12</span> or <span class="pyClass">PitchClass24</span>
+                    any permutation of pitch-classes, represented as a <span class="code pyKeyword">list</span>
+                    of <span class="code pyClass">PitchClass12</span> or <span class="code pyClass">PitchClass24</span>
                     elements. A row is a pcseg that contains all of the pitch-classes in some order.
                 </p>
                 <div class="codeReference">
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">InvarianceMatrix</span></span></h4>
+                    <p>
+                        Represents an invariance matrix, as developed by Bo Alphonse. An invariance
+                        matrix allows you to easily visualize invariances under the operations of
+                        transposition and various forms of multiplication (M5, M7, M11/I in the
+                        chromatic system).
+                        This class builds an invariance matrix automatically from two provided
+                        pcsegs and the operation requested.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h4><span class="code pyClass">InvarianceMatrix</span> constructor</h4>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.__init__(mx_type=<span class="pyStr">&quot;T&quot;</span>, a: <span class="pyKeyword">list</span>, c: <span class="pyKeyword">list</span>)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">InvarianceMatrix</span>. 
+                            The <span class="code">mx_type</span> specifies what kind of invariance matrix is
+                            being created. (For chromatic pcsegs, these are <span class="code pyStr">&quot;T&quot;</span>,
+                            <span class="code pyStr">&quot;M5&quot;</span>, <span class="code pyStr">&quot;M7&quot;</span>,
+                            and <span class="code pyStr">&quot;M11&quot;</span> or <span class="code pyStr">&quot;I&quot;</span>.
+                            For microtonal pcsegs, these are <span class="code pyStr">&quot;T&quot;</span>,
+                            <span class="code pyStr">&quot;M5&quot;</span>, <span class="code pyStr">&quot;M7&quot;</span>,
+                            <span class="code pyStr">&quot;M11&quot;</span>, <span class="code pyStr">&quot;M13&quot;</span>,
+                            <span class="code pyStr">&quot;M17&quot;</span>, <span class="code pyStr">&quot;M19&quot;</span>,
+                            and <span class="code pyStr">&quot;M23&quot;</span> or <span class="code pyStr">&quot;I&quot;</span>.)
+                            You can also provide pcsegs A and C to the constructor, or you can load them later using the
+                            <span class="code">load_matrix()</span> method.
+                        </p>
+                        <h4><span class="code pyClass">InvarianceMatrix</span> read-only properties</h4>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.mx<span class="returnType">[<span class="pyKeyword">list</span>]</span></span></h5>
+                        <p>
+                            Gets the entire invariance matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.pcseg_a</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the pcseg A.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.pcseg_b</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the transformed pcseg B.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.pcseg_c</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the pcseg C.
+                        </p>
+                        <h4><span class="code pyClass">InvarianceMatrix</span> methods</h4>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.get_column(j: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the column at index <i>j</i> of the invariance matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.get_row(i: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the row at index <i>i</i> of the invariance matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.load_matrix(a: <span class="pyKeyword">list</span>, c: <span class="pyKeyword">list</span>)</span></h5>
+                        <p>
+                            Imports pcsegs A and C and generates the <span class="code pyClass">InvarianceMatrix</span>.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">InvarianceMatrix</span>.print(include: <span class="pyKeyword">list</span> = <span class="pyKeyword">None</span>)</span></h5>
+                        <p>
+                            Prints the invariance matrix. You can filter the matrix by providing a list of 
+                            pitch-classes as a parameter to this function. This will print only the pcs
+                            in the list, which is useful for isolating invariances at specific transpositions.
+                        </p>
+                        <h4><span class="code pyClass">InvarianceMatrix</span> overloaded special functions</h4>
+                        <p>
+                            Overloaded special functions include <span class="code">__getitem__()</span>, 
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can index an <span class="code pyClass">InvarianceMatrix</span>
+                            object (for example, <span class="code">my_invariance_mx[i][j]</span>) to get the
+                            contents of a specific cell.
+                            The <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">InvarianceMatrix</span> objects to be printed.
+                        </p>
+                    </div>
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">TwelveToneMatrix</span></span></h4>
+                    <p>
+                        Represents a twelve-tone matrix. This matrix is really only useful for visualization,
+                        as you can create rows as pcsegs and transform them without creating a
+                        <span class="code pyClass">TwelveToneMatrix</span> object.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.__init__(row=<span class="pyKeyword">None</span>)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">TwelveToneMatrix</span>. You can provide a row
+                            to initialize the matrix.
+                        </p>
+                        <h4><span class="code pyClass">TwelveToneMatrix</span> read-only properties</h4>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.matrix<span class="returnType">[<span class="pyKeyword">list</span>]</span></span></h5>
+                        <p>
+                            Gets the entire twelve-tone matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.labels_bottom</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the RI labels for the bottom side of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.labels_left</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the T labels for the right side of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.labels_right</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the R labels for the left side of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.labels_top</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the I labels for the top side of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.row</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the row that represents the row-class in the <span class="code pyClass">TwelveToneMatrix</span>.
+                        </p>
+                        <h4><span class="code pyClass">TwelveToneMatrix</span> methods</h4>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.get_column(j: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the column at index <i>j</i> of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.get_row(i: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the row at index <i>i</i> of the matrix.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">TwelveToneMatrix</span>.import_row(row: <span class="pyKeyword">list</span>)</span></h5>
+                        <p>
+                            Imports a row and generates the <span class="code pyClass">TwelveToneMatrix</span>.
+                        </p>
+                        <h4><span class="code pyClass">TwelveToneMatrix</span> overloaded special functions</h4>
+                        <p>
+                            Overloaded special functions include <span class="code">__getitem__()</span>, 
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can index an <span class="code pyClass">TwelveToneMatrix</span>
+                            object (for example, <span class="code">my_tt_mx[i][j]</span>) to get the
+                            contents of a specific cell.
+                            The <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">TwelveToneMatrix</span> objects to be printed.
+                        </p>
+                    </div>
+                    <h5><span class="code">invert(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Inverts a pcset by using the M<sub>11</sub> or M<sub>23</sub> operations, depending on
+                        whether the pcset contains <span class="code pyClass">PitchClass12</span> or 
+                        <span class="code pyClass">PitchClass24</span> elements.
+                    </p>
+                    <h5><span class="code">make_pcseg12(*args)<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                    <p>
+                        Creates a chromatic pcseg from one or more <span class="code pyKeyword">int</span> values.
+                    </p>
+                    <h5><span class="code">make_pcseg24(*args)<span class="returnType">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                    <p>
+                        Creates a microtonal pcseg from one or more <span class="code pyKeyword">int</span> values.
+                    </p>
+                    <h5><span class="code">multiply(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <p>
+                        Multiplies a pcseg using the operator M<sub><i>n</i></sub>.
+                    </p>
+                    <h5><span class="code">retrograde(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Retrogrades a pcset. This is the same as <span class="code"><span class="pyKeyword">list</span>.reverse()</span>
+                        but this function returns a copy rather than reversing the original list.
+                    </p>
+                    <h5><span class="code">rotate(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <p>
+                        Rotates a pcseg to the left <i>n</i> positions, using the operator r<sub><i>n</i></sub>.
+                    </p>
+                    <h5><span class="code">transpose(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <p>
+                        Transposes a pcseg using the operator T<sub><i>n</i></sub>.
+                    </p>
                     
                 </div>
             </div>

@@ -21,24 +21,24 @@
                 <h2>2.11. pctheory.tables</h2>
                 <p>
                     This module contains functionality for creating tables of set-class
-                    names. Every <span class="pyClass">SetClass12</span> object requires
+                    names. Every <span class="code pyClass">SetClass12</span> object requires
                     a name table for looking up Forte and Carter names, as well as looking
                     up Z-relations. The name table is a dictionary that contains
                     dictionaries and lists with the data, and is automatically created
-                    when you initialize a <span class="pyClass">SetClass12</span> object.
+                    when you initialize a <span class="code pyClass">SetClass12</span> object.
                     However, for efficiency, you can create the name table independently
-                    and pass it as an argument to the <span class="pyClass">SetClass12</span> 
-                    conctructor. This allows multiple <span class="pyClass">SetClass12</span> 
+                    and pass it as an argument to the <span class="code pyClass">SetClass12</span> 
+                    conctructor. This allows multiple <span class="code pyClass">SetClass12</span> 
                     objects to share the same name table, saving memory and execution time 
-                    when working with many <span class="pyClass">SetClass12</span>
+                    when working with many <span class="code pyClass">SetClass12</span>
                     instances. 
                 </p>
                 <p>
-                    Name tables are not part of <span class="pyClass">SetClass24</span>
+                    Name tables are not part of <span class="code pyClass">SetClass24</span>
                     objects at this time. There are several reasons for this. First of all,
                     Forte&hyphen;style names are impractical in the microtonal system because
                     of the huge number of set-classes. So there is no need to look up
-                    additional names for a <span class="pyClass">SetClass24</span> object.
+                    additional names for a <span class="code pyClass">SetClass24</span> object.
                     Also, a name table for microtonal set-classes would require an
                     enormous amount of memory.
                 </p>
