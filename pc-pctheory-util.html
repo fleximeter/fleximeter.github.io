@@ -24,6 +24,13 @@
                     and pitch-classes.
                 </p>
                 <div class="codeReference">
+                    <h5><span class="code">map_to_chromatic</span>(scale_map, sequence)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Takes a succession of diatonic pitch-classes and maps them to chromatic pitch-classes.
+                        For example, you can map diatonic scale degrees to chromatic scale degrees by providing the 
+                        scale map <span class="code">{0: 0, 1: 2, 2: 4, 3: 5, 4: 7, 5: 9, 6: 11}</span>, and
+                        transform a diatonic pcseg to a chromatic pcseg using this function.
+                    </p>
                     <h5><span class="code">norgard(n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         Generates the first <i>n</i> numbers of Per Norgard&apos;s &ldquo;infinity series,&rdquo;
