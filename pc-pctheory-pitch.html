@@ -27,44 +27,64 @@
                     <p>
                         Represents a pitch-class from the twelve-note equally-tempered chromatic scale.
                         Notes are represented mathematically with integers mod 12.
-                        Each pitch-class has a string representation <span class="code">&lsquo;0,&rsquo; 
-                            &lsquo;1,&rsquo; ..., &lsquo;A&rsquo;, &lsquo;B&rsquo;</span>.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">PitchClass12</span> read-only properties</h4>
-                        <h5><span class="code"><span class="pyClass">PitchClass12</span>.pc_str</span> <span class="returnType code pyKeyword">str</span></h5>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass12</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">PitchClass12</span>.__init__(pc: <span class="pyKeyword">int</span> = 0)</span></h5>
                         <p>
-                            The string representation of the current pitch-class (0, 1, ..., A, B).
+                            Constructs a <span class="code pyClass">PitchClass12</span>. 
+                            You may choose to provide a pitch-class to initialize the 
+                            <span class="code pyClass">PitchClass12</span>.
                         </p>
-                        <h4><span class="code pyClass">PitchClass12</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass12</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">PitchClass12</span>.pc</span> <span class="returnType code pyKeyword">int</span></h5>
                         <p>
                             The pitch class integer 0 &le; pc &lt; 12.
                         </p>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass12</span> read-only properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">PitchClass12</span>.pc_str</span> <span class="returnType code pyKeyword">str</span></h5>
+                        <p>
+                            The string representation of the current pitch-class (0, 1, ..., A, B).
+                        </p>
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">PitchClass24</span></span></h4>
                     <p>
-                        Under construction
+                        Represents a pitch-class from the 24-note equally-tempered microtonal scale.
+                        Notes are represented mathematically with integers mod 24.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">PitchClass24</span> read-only properties</h4>
-                        <h5><span class="code"><span class="pyClass">PitchClass24</span>.pc_str</span> <span class="returnType code pyKeyword">str</span></h5>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass24</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">PitchClass24</span>.__init__(pc: <span class="pyKeyword">int</span> = 0)</span></h5>
                         <p>
-                            The string representation of the current pitch-class (00, 01, ..., 23, 24).
+                            Constructs a <span class="code pyClass">PitchClass24</span>. 
+                            You may choose to provide a pitch-class to initialize the 
+                            <span class="code pyClass">PitchClass24</span>.
                         </p>
-                        <h4><span class="code pyClass">PitchClass24</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass24</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">PitchClass24</span>.pc</span> <span class="returnType code pyKeyword">int</span></h5>
                         <p>
                             The pitch class integer 0 &le; pc &lt; 24.
                         </p>
+                        <h4><span class="subhead"><span class="code pyClass">PitchClass24</span> read-only properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">PitchClass24</span>.pc_str</span> <span class="returnType code pyKeyword">str</span></h5>
+                        <p>
+                            The string representation of the current pitch-class (00, 01, ..., 23, 24).
+                        </p>
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">Pitch12</span></span></h4>
                     <p>
-                        This class represents a pitch. It inherits from <span class="pyClass">PitchClass12</span> and contains all of
+                        This class represents a pitch. It inherits from <span class="code pyClass">PitchClass12</span> and contains all of
                         the properties from that class.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">Pitch12</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">Pitch12</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">Pitch12</span>.__init__(p: <span class="pyKeyword">int</span> = 0)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">Pitch12</span>. 
+                            You may choose to provide a pitch to initialize the 
+                            <span class="code pyClass">Pitch12</span>.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Pitch12</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">Pitch12</span>.p</span> <span class="returnType code pyKeyword">int</span></h5>
                         <p>
                             The pitch integer. 0 is C4; positive values are above C4, and negative values are below C4.
@@ -81,11 +101,18 @@
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">Pitch24</span></span></h4>
                     <p>
-                        This class represents a pitch. It inherits from <span class="pyClass">PitchClass24</span> and contains all of
+                        This class represents a pitch. It inherits from <span class="code pyClass">PitchClass24</span> and contains all of
                         the properties from that class.
                     </p>
                     <div class="codeIndent1Reference">
-                        <h4><span class="code pyClass">Pitch24</span> properties</h4>
+                        <h4><span class="subhead"><span class="code pyClass">Pitch24</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">Pitch24</span>.__init__(p: <span class="pyKeyword">int</span> = 0)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">Pitch24</span>. 
+                            You may choose to provide a pitch to initialize the 
+                            <span class="code pyClass">Pitch24</span>.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Pitch24</span> properties</span></h4>
                         <h5><span class="code"><span class="pyClass">Pitch24</span>.p</span> <span class="returnType code pyKeyword">int</span></h5>
                         <p>
                             The pitch integer. 0 is C4; positive values are above C4, and negative values are below C4.

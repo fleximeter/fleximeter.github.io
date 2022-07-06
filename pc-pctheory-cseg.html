@@ -25,7 +25,33 @@
                     of <span class="code pyKeyword">int</span> elements.
                 </p>
                 <div class="codeReference">
-                    
+                    <h5><span class="code">com(a: <span class="pyKeyword">int</span>, b: <span class="pyKeyword">int</span>)</span><span class="returnType code"><span class="pyKeyword">int</span></span></h5>
+                    <p>
+                        Compares two contour pitches (cps) using the COM function. If pitch <i>a</i> is lower than <i>b</i>,
+                        returns 1. If they are the same, returns 0. If <i>a</i> is higher than <i>b</i>, returns -1.
+                    </p>
+                    <h5><span class="code">com_mx(cseg1: <span class="pyKeyword">list</span>, cseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">[[<span class="pyKeyword">int</span>]]</span></h5>
+                    <p>
+                        Creates the COM matrix for two csegs. This matrix shows the results of the COM function
+                        for every pair of contour pitches (cps) in the two csegs.
+                    </p>
+                    <h5><span class="code">invert(cseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Inverts a cseg.
+                    </p>
+                    <h5><span class="code">retrograde(cseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Retrogrades a cseg and returns a copy.
+                    </p>
+                    <h5><span class="code">rotate(cseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Rotates a cseg to the left <i>n</i> positions.
+                    </p>
+                    <h5><span class="code">simplify(cseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Simplifies a cseg. If the cseg contains contour pitches with numbering gaps, for example,
+                        &lt;0, 2, 1, 8, 6&gt; it will be reduced to &lt;0, 2, 1, 4, 3&gt;.
+                    </p>                                        
                 </div>
             </div>
             <aside class="sidebar">
