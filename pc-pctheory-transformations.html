@@ -21,12 +21,12 @@
                 <h2>2.13. pctheory.transformations</h2>
                 <p>
                     This file contains classes and functions for working with standard transformations:
-                    the row operators (ROs) and twelve-tone operators (or TTOs).
+                    the ordered tone operators (OTOs) and unordered tone operators (or UTOs).
                 </p>
                 <div class="codeReference">
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">OTO</span></span></h4>
                     <p>
-                        Represents an operator of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub> or T<sub><i>n</i></sub>RM<sub><i>m</i></sub>.
+                        Represents an ordered tone operator (OTO) of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub> or T<sub><i>n</i></sub>RM<sub><i>m</i></sub>.
                         This class can be used with both <span class="code pyClass">PitchClass12</span> and <span class="code pyClass">PitchClass24</span> objects. 
                         When used with a twelve-tone row, if <i>m</i> &isin; {1, 5, 7, 11}, operators in this class are row operators (ROs).
                         <span class="code pyClass">OTO</span> objects are represented with a tuple of size 3: (<i>t</i>, <i>r</i>, <i>m</i>),
@@ -68,7 +68,7 @@
                     </div>
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">UTO</span></span></h4>
                     <p>
-                        Represents an operator of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub>.
+                        Represents an unordered tone operator (UTO) of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub>.
                         This class can be used with both <span class="code pyClass">PitchClass12</span> and <span class="code pyClass">PitchClass24</span> objects. 
                         When used with chromatic pcsets or pcsegs, if <i>m</i> &isin; {1, 5, 7, 11}, operators in this class are twelve-tone operators (TTOs).                        
                         <span class="code pyClass">UTO</span> objects are represented with a tuple of size 2: (<i>t</i>, <i>m</i>),
