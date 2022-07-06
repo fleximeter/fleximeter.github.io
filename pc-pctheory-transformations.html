@@ -24,7 +24,100 @@
                     the row operators (ROs) and twelve-tone operators (or TTOs).
                 </p>
                 <div class="codeReference">
-                    
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">OTO</span></span></h4>
+                    <p>
+                        Represents an operator of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub> or T<sub><i>n</i></sub>RM<sub><i>m</i></sub>.
+                        This class can be used with both <span class="code pyClass">PitchClass12</span> and <span class="code pyClass">PitchClass24</span> objects. 
+                        When used with a twelve-tone row, if <i>m</i> &isin; {1, 5, 7, 11}, operators in this class are row operators (ROs).
+                        <span class="code pyClass">OTO</span> objects are represented with a tuple of size 3: (<i>t</i>, <i>r</i>, <i>m</i>),
+                        where <i>t</i> is the index of transposition, <i>r</i> is 1 if the operator is a retrograde operator and 0 otherwise,
+                        and <i>m</i> is the index of multiplication. <span class="code pyClass">OTO</span>s can transform
+                        only pcsegs, not individual pcs.
+                    </p>
+                        
+                    <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">OTO</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">OTO</span>.__init__(T=0, R=0, M=0)</span></h5>
+                        <p>
+                            Constructs an <span class="code pyClass">OTO</span>. You can provide the indices of transposition
+                            and multiplication, as well as whether or not this is a retrograde operator (1 for retrograde
+                            or 0 for no retrograde).
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OTO</span> properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">OTO</span>.oto<span class="returnType">(<span class="pyKeyword">int</span>, <span class="pyKeyword">int</span>, <span class="pyKeyword">int</span>)</span></span></h5>
+                        <p>
+                            The OTO, as a tuple (T, R, M).
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OTO</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">OTO</span>.transform(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Transforms a pcseg by the OTO operator.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OTO</span> overloaded special functions</span></h4>
+                        <p>
+                            Overloaded special functions include <span class="code">__eq__()</span>, 
+                            <span class="code">__getitem__()</span>, <span class="code">__hash__()</span>,
+                            <span class="code">__ne__()</span>,  
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can index an <span class="code pyClass">OTO</span>
+                            object (for example, <span class="code">my_oto[i]</span>), as well as compare <span class="code pyClass">OTO</span>
+                            objects using the <span class="code">==</span> and <span class="code">!=</span> operators.
+                            The <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">OTO</span> objects to be printed.
+                        </p>
+                    </div>
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">UTO</span></span></h4>
+                    <p>
+                        Represents an operator of the form T<sub><i>n</i></sub>M<sub><i>m</i></sub>.
+                        This class can be used with both <span class="code pyClass">PitchClass12</span> and <span class="code pyClass">PitchClass24</span> objects. 
+                        When used with chromatic pcsets or pcsegs, if <i>m</i> &isin; {1, 5, 7, 11}, operators in this class are twelve-tone operators (TTOs).                        
+                        <span class="code pyClass">UTO</span> objects are represented with a tuple of size 2: (<i>t</i>, <i>m</i>),
+                        where <i>t</i> is the index of transposition, and <i>m</i> is the index of multiplication. Applying an
+                        <span class="code pyClass">UTO</span> transformation to a pcseg does not affect the order of the pcseg.
+                        <span class="code pyClass">UTO</span>s can transform individual pcs, or pcs nested within one or more
+                        lists or sets.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">UTO</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">UTO</span>.__init__(T=0, M=0)</span></h5>
+                        <p>
+                            Constructs an <span class="code pyClass">UTO</span>. You can provide the indices of transposition
+                            and multiplication.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">UTO</span> properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">UTO</span>.uto<span class="returnType">(<span class="pyKeyword">int</span>, <span class="pyKeyword">int</span>)</span></span></h5>
+                        <p>
+                            The UTO, as a tuple (T, M).
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">UTO</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">UTO</span>.cycles(num_pcs=12)</span><span class="returnType code">[[<span class="pyKeyword">int</span>]]</span></span></h5>
+                        <p>
+                            Gets the cycles of the UTO operator.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">UTO</span>.inverse(num_pcs=12)</span><span class="returnType code"><span class="pyClass">UTO</span></span></h5>
+                        <p>
+                            Gets the inverse of the UTO operator.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">UTO</span>.transform(item)</span><span class="returnType">whatever was input</span></h5>
+                        <p>
+                            Transforms an item by the OTO operator. The item may be a <span class="code pyClass">PitchClass12</span> or
+                            <span class="code pyClass">PitchClass24</span>, a pcset, a pcseg, or a poset with any amount of 
+                            nesting. The <span class="code pyClass">UTO</span>.transform() function is recursive, so it is possible
+                            to use it to transform a very gnarly poset like [0A{3[5B]}5{[9{A6}5]}2].
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">UTO</span> overloaded special functions</span></h4>
+                        <p>
+                            Overloaded special functions include <span class="code">__eq__()</span>, 
+                            <span class="code">__getitem__()</span>, <span class="code">__hash__()</span>,
+                            <span class="code">__ne__()</span>,  
+                            <span class="code">__repr__()</span>, and <span class="code">__str__()</span>.
+                            Basically, this means that you can index an <span class="code pyClass">UTO</span>
+                            object (for example, <span class="code">my_uto[i]</span>), as well as compare <span class="code pyClass">UTO</span>
+                            objects using the <span class="code">==</span> and <span class="code">!=</span> operators.
+                            The <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">UTO</span> objects to be printed.
+                        </p>
+                    </div>
                 </div>
             </div>
             <aside class="sidebar">
