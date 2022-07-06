@@ -19,6 +19,7 @@
         <div class="mainDiv">
             <div class="article">
                 <h2>1. Introduction</h2>
+                <h3>1.1. Introduction</h3>
                 <p>
                     pctheory is a Python module for working with atonal theory. It has classes that model 
                     chromatic pitch-classes, microtonal pitch-classes, pitches, and transformations. 
@@ -27,7 +28,7 @@
                     <span class="code">numpy</span> types.
                 </p>
                 <p>
-                    First of all, it is important to clarify some terminology. To distinguish chromatic and microtonal pitches and
+                    To distinguish chromatic and microtonal pitches and
                     pitch-classes, the term &ldquo;chromatic system&rdquo; is used  to refer to aspects of atonal theory that
                     apply to twelve&hyphen;note equal&hyphen;temperament. The term &ldquo;microtonal system&rdquo; 
                     refers to aspects of atonal theory that apply to twenty&hyphen;four&hyphen;note equal&hyphen;temperament.
@@ -44,22 +45,69 @@
                     can be modeled as either psegs, pcsegs, psets, or pcsets depending on which makes
                     the most sense in any given situation.
                 </p>
-                <h2>2. Prerequisites</h2>
+                <h3>1.2. Uses of pctheory</h3>
+                <p>
+                    pctheory is a general-purpose platform for the use of atonal theory. There is, of course,
+                    no requirement that the music be atonal. Many of the features implemented in pctheory
+                    can be readily used in a tonal or quasi-tonal context. pctheory makes it easy to manipulate
+                    complex chords (whether &ldquo;tonal&rdquo;&hyphen;sounding or not), determine relationships
+                    between different kinds of chords or pitch-class collections, and perform many calculations
+                    quickly and accurately. For example, pctheory allows you to easily create and use rotational
+                    arrays (as used in Stravinsky's music). This could be useful for both composition and analysis.
+                    One interesting feature of pctheory is its inclusion of tools for working with pitch directly,
+                    rather than through the abstraction of pitch-class. This is applicable to music that uses
+                    fixed-pitch formations.
+                </p>
+                <p>
+                    Because pctheory is a Python module, it is easy to write simple programs in Python to
+                    investigate pitch, pitch-class, and operator relations. If you want to generate all
+                    pentachordal set-classes and select only those that contain ic3, you can write a short program
+                    that uses pctheory to do this for you. If you want to study all of the subset-classes
+                    of a set-class, it is easy to generate them with pctheory. If you want to generate
+                    several different invariance matrices, this can be easily done. There is no need to
+                    work it out on paper. If you want to transform an array, pctheory can do that with
+                    a single method call. Perhaps you want to study all of the pcsets in a set-class. They
+                    can be generated with a single method call as well.
+                    If you need to know Elliott Carter's number for a particular
+                    chromatic chord, that functionality is part of the <span class="code pyClass">SetClass12</span>
+                    class, so there is no need to open a reference book. The same goes for standard properties
+                    like Forte names and ic vectors.
+                </p>
+                <h3>1.3. Prerequisites</h3>
                 <p>
                     pctheory requires Python 3.0 or newer, as well as the additional modules <span class="code">networkx</span>, 
                     <span class="code">numpy</span>, <span class="code">pandas</span>, and <span class="code">pyvis</span>.
                 </p>
-                <h2>3. Further reading</h2>
+                <h3>1.4. Copyright and license</h3>
                 <p>
-                    Following is a list of books and articles that explain concepts of atonal theory,
-                    many of which are used in this module. The pctheory module uses terms and conventions from Robert 
-                    Morris&apos;s work.
+                    pctheory is copyright &copy; 2022 by Jeffrey Martin. This program is free software: you can redistribute it and/or modify
+                    it under the terms of the GNU General Public License as published by
+                    the Free Software Foundation, either version 3 of the License, or
+                    (at your option) any later version.
+                    
+                    This program is distributed in the hope that it will be useful,
+                    but WITHOUT ANY WARRANTY; without even the implied warranty of
+                    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+                    GNU General Public License for more details.
+                    
+                    To view the GNU General Public License v.3.0, visit <a href="https://www.gnu.org/licenses/gpl-3.0.en.html">https://www.gnu.org/licenses/gpl-3.0.en.html</a>.
+                </p>
+                <h3>1.5. Further reading</h3>
+                <p>
+                    Following is a list of books and articles that provide helpful background for pctheory.
+                    pctheory uses terms and conventions from Robert Morris&apos;s work.
                 </p>
                 <p>
                     Eckardt, Jason. &ldquo;Surface Elaboration of Pitch-Class Sets Using Nonpitched Musical Dimensions.&rdquo; <i>Perspectives of New Music</i> 43:1 (Winter, 2005), 120-140.
                 </p>                
                 <p>
                     Forte, Allen. <i>The Structure of Atonal Music</i>. New Haven: Yale University Press, 1973.
+                </p>
+                <p>
+                    Link, John. &ldquo;Harmony in Elliott Carter&apos;s Late Music.&rdquo; <i>Music Theory Online</i> 25:1 (April, 2019).
+                </p>
+                <p>
+                    Mead, Andrew. <i>An Introduction to the Music of Milton Babbitt</i>. Princeton: Princeton University Press, 1994.
                 </p>
                 <p>
                     Morris, Robert D. <i>Class Notes for Advanced Atonal Music Theory</i>. 2 volumes. Lebanon, NH: Frog Peak Music, 2001.
@@ -70,6 +118,9 @@
                 <p>
                     Morris, Robert D. <i>Composition With Pitch Classes: A Theory of Compositional Design</i>. New Haven: Yale University Press, 1987.
                 </p>
+                <p>
+                    Nauert, Paul. &ldquo;Field Notes: A Study of Fixed-Pitch Formations.&rdquo; <i>Perspectives of New Music</i> 41:1 (Winter, 2003), 180-239.
+                </p>                
                 <p>
                     Scott, Damon, and Eric J. Isaacson. &ldquo;The Interval Angle: A Similarity Measure for Pitch-Class Sets.&rdquo; <i>Perspectives of New Music</i> 36:2 (Summer, 1998), 107-142.
                 </p>                
