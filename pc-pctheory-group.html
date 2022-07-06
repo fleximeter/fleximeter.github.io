@@ -23,7 +23,42 @@
                     This module contains a class representing a group of operators.
                 </p>
                 <div class="codeReference">
-                    
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">OperatorGroup</span></span></h4>
+                    <p>
+                        Represents a group of T<sub><i>n</i></sub>M<sub><i>m</i></sub> operators, as explained in
+                        chapter 4 of Robert Morris&apos;s <i>Composition with Pitch Classes: A Theory of Compositional Design</i>.
+                        Operator groups are mathematical groups; that is, they have an operation (operator concatenation), 
+                        they have an identity element (T<sub>0</sub>M<sub>1</sub>), they are associative, and for every
+                        T<sub><i>n</i></sub>M<sub><i>m</i></sub> in the group, there is an inverse
+                        (T<sub><i>n</i></sub>M<sub><i>m</i></sub>)<sup>&hyphen;1</sup> in the group.
+                        The TTOs (twelve-tone operators) are a mathematical group, as well as smaller
+                        subgroups of the TTOs.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.__init__(utos: <span class="pyKeyword">list</span> = <span class="pyKeyword">None</span>)</span></h5>
+                        <p>
+                            Constructs an <span class="code pyClass">OperatorGroup</span>. You can initialize the group
+                            with a list of UTOs that form a group.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> read-only properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.name<span class="returnType"><span class="pyKeyword">str</span></span></span></h5>
+                        <p>
+                            Gets the name of the operator group. For example, the group of all TTOs is G*/*/*/*.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.get_orbits()<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <p>
+                            Gets the orbits of an operator group.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> overloaded special functions</span></h4>
+                        <p>
+                            Overloaded special functions include 
+                            <span class="code">__repr__()</span> and <span class="code">__str__()</span>.
+                            The <span class="code">str()</span> implementation allows 
+                            <span class="code pyClass">RotationalArray</span> objects to be printed.
+                        </p>
+                    </div>
                 </div>
             </div>
             <aside class="sidebar">
