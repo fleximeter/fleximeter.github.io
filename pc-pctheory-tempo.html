@@ -26,7 +26,22 @@
                     for now.
                 </p>
                 <div class="codeReference">
-                    
+                    <h5><span class="code">make_metric_modulation_chain(initial_tempo, ratios: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">Fraction</span>]</span></h5>
+                    <p>
+                        Makes a succession of tempos that are related by the provided list of tempo ratios.
+                        The initial tempo can be a <span class="code pyKeyword">float</span>, <span class="code pyKeyword">int</span>,
+                        or <span class="code pyClass">Fraction</span>. Each element in <span class="code">ratios</span>
+                        must be a <span class="code pyClass">Fraction</span>.
+                        For example, suppose the initial tempo is 72 and the list of ratios is 5/4, 2/3, and 7/6.
+                        The resulting metric modulation chain will be 72, 90, 60, 70.
+                    </p>
+                    <h5><span class="code">plot_tempo_table(quarter_note_tempos: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">Fraction</span>]</span></h5>
+                    <p>
+                        Makes a table of tempos. Each column corresponds to a duration (whole note, half note, quarter note, 
+                        various types of tuplet, etc.). Each row corresponds to a particular quarter&hyphen;note tempo.
+                        This makes it easy to compare the speeds of subdivisions in different tempi.
+                        The tempo table will be displayed as a <span class="code">matplotlib</span> table.
+                    </p>                    
                 </div>
             </div>
             <aside class="sidebar">
