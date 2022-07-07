@@ -22,10 +22,43 @@
                 <p>
                     This module contains functionality for working with posets, or partially ordered sets.
                     For the purposes of this module, a poset is a list that contains one or more of the
-                    following: sets, lists, and individual pitch-classes.
+                    following: sets, lists, and individual pitch-classes. The two functions in this module
+                    are useful for generating posets that match certain criteria.
                 </p>
                 <div class="codeReference">
-                    
+                    <h5><span class="code">filter_poset_positions(posets: <span class="pyKeyword">list</span>, position_filter: <span class="pyKeyword">list</span>, exclude=<span class="pyKeyword">False</span>)</span><span class="returnType code pyKeyword">list</span></h5>
+                    <p>
+                        Filters a list of posets. The <span class="code">position_filter</span> must be a <span class="code pyKeyword">list</span>
+                        of the same length as each element in <span class="code">posets</span>. Each element in <span class="code">position_filter</span> corresponds to an
+                        element in any single poset in <span class="code">posets</span>. The filter is either an inclusion or exclusion filter. If it is an inclusion filter (default),
+                        each element in any single poset in <span class="code">posets</span> must be an improper subset of the corresponding
+                        element in <span class="code">position_filter</span>. If the filter is an exclusion filter, each element in any single poset in <span class="code">posets</span> 
+                        must be disjoint with the corresponding element in <span class="code">position_filter</span>. The filter type
+                        is determined by the <span class="code">exclude</span> parameter.
+                    </p>
+                    <h5><span class="code">generate_chains_weak(p0: <span class="pyClass">PitchClass12</span>, sc_list: <span class="pyKeyword">list</span>, 
+                        max_2_similarity: <span class="pyKeyword">float</span> = 0.4, min_2_similarity: <span class="pyKeyword">float</span> = 0, 
+                        max_3_similarity: <span class="pyKeyword">float</span> = 0.4, min_3_similarity: <span class="pyKeyword">float</span> = 0, 
+                        pn=<span class="pyKeyword">False</span>)</span><span class="returnType code pyKeyword">list</span></h5>
+                    <p>
+                        Generates a list of weak pcset chains. A &ldquo;weak pcset chain&rdquo; is an ordered succession of pcsets,
+                        such that each pair of adjacent pcsets has at least one element in common.
+                        This element is extracted from both pcsets and positioned in between them in the chain.
+                        For example, suppose we have a list of pcsets [{059A}, {358B}, {1234}]. The corresponding weak pcset
+                        chain is [{09A}, 5, {8B}, 3, {124}]. We can specify the starting pc, so we will choose 9 for that.
+                        And we will also choose an ending pc (although this is not strictly necessary, the algorithm will do this).
+                        So the weak pcset chain becomes [9, {0A}, 5, {8B}, 3, {14}, 2]. This is a poset. The single pcs and sets are ordered
+                        with respect to each other. The elements inside the sets are not ordered with respect to each other.
+                    </p><p>
+                        The parameter <span class="code">p0</span> specifies the initial pc of the chain.
+                        <span class="code">sc_list</span> is a list of set&hyphen;classes (each successive pcset in the chain
+                        must be a member of its corresponding set&hyphen;class in <span class="code">sc_list</span>.
+                        The max and min similarity parameters specify the percentage of elements that can be the same
+                        in 2 or 3 adjacent pcsets. Finally, <span class="code">pn</span> is the ending pc (if it is not specified,
+                        there will be no ending pc specified).
+                    </p><p>
+                        This function will generate every possible chain that matches the input criteria.
+                    </p>
                 </div>
             </div>
             <aside class="sidebar">
