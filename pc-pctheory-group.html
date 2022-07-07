@@ -29,34 +29,56 @@
                         chapter 4 of Robert Morris&apos;s <i>Composition with Pitch Classes: A Theory of Compositional Design</i>.
                         Operator groups are mathematical groups; that is, they have an operation (operator concatenation), 
                         they have an identity element (T<sub>0</sub>M<sub>1</sub>), they are associative, and for every
-                        T<sub><i>n</i></sub>M<sub><i>m</i></sub> in the group, there is an inverse
+                        operator T<sub><i>n</i></sub>M<sub><i>m</i></sub> in the group, there is an inverse operator
                         (T<sub><i>n</i></sub>M<sub><i>m</i></sub>)<sup>&hyphen;1</sup> in the group.
                         The TTOs (twelve-tone operators) are a mathematical group, as well as smaller
                         subgroups of the TTOs.
                     </p>
                     <div class="codeIndent1Reference">
                         <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> constructor</span></h4>
-                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.__init__(utos: <span class="pyKeyword">list</span> = <span class="pyKeyword">None</span>)</span></h5>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.__init__(utos: <span class="pyKeyword">list</span> = <span class="pyKeyword">None</span>, num_pcs: <span class="pyKeyword">int</span> = <span class="pyKeyword">12</span>)</span></h5>
                         <p>
                             Constructs an <span class="code pyClass">OperatorGroup</span>. You can initialize the group
-                            with a list of UTOs that form a group.
+                            with a list of UTOs that form a group. You can also specify whether this is a group of chromatic
+                            UTOs or microtonal UTOs. Once this is specified in the constructor, it cannot be changed.
                         </p>
                         <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> read-only properties</span></h4>
                         <h5><span class="code"><span class="pyClass">OperatorGroup</span>.name<span class="returnType"><span class="pyKeyword">str</span></span></span></h5>
                         <p>
                             Gets the name of the operator group. For example, the group of all TTOs is G*/*/*/*.
                         </p>
-                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> methods</span></h4>
-                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.get_orbits()<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.utos<span class="returnType">{<span class="pyClass">UTO</span>}</span></span></h5>
                         <p>
-                            Gets the orbits of an operator group.
+                            Gets the UTOs in the operator group as a <span class="code pyKeyword">set</span>.
                         </p>
+                        <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.get_orbits()</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></span></h5>
+                        <p>
+                            Gets the orbits of an operator group. Let <i>U</i> be the universal set of all chromatic pitch-classes or of
+                            all microtonal pitch-classes. Then the orbits of an operator group <i>G</i> are the disjoint subsets of <i>U</i>,
+                            such that for any pitch-class <i>s</i> in a subset <i>S</i> of <i>U</i>, the operations in <i>G</i> only
+                            transform <i>s</i> into another element <i>t</i> &in; <i>S</i>.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.left_coset(uto: transformations.<span class="pyClass">UTO</span>)<span class="returnType">[<span class="pyClass">UTO</span>]</span></span></h5>
+                        <p>
+                            Gets the left coset of <i>G</i> by a UTO.
+                        </p>                        
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.load_utos(utos: <span class="pyKeyword">list</span>)</span></h5>
+                        <p>
+                            Loads a list of UTOs into a group. Note that when the <span class="code pyClass">OperatorGroup</span> was
+                            initialized, the number of possible pcs was specified. If this is a group of chromatic operators,
+                            you cannot load microtonal operators into the group, and vice versa.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">OperatorGroup</span>.right_coset(uto: <span class="pyClass">UTO</span>)<span class="returnType">[<span class="pyClass">UTO</span>]</span></span></h5>
+                        <p>
+                            Gets the right coset of <i>G</i> by a UTO.
+                        </p>                        
                         <h4><span class="subhead"><span class="code pyClass">OperatorGroup</span> overloaded special functions</span></h4>
                         <p>
                             Overloaded special functions include 
                             <span class="code">__repr__()</span> and <span class="code">__str__()</span>.
                             The <span class="code">str()</span> implementation allows 
-                            <span class="code pyClass">RotationalArray</span> objects to be printed.
+                            <span class="code pyClass">OperatorGroup</span> objects to be printed.
                         </p>
                     </div>
                 </div>
