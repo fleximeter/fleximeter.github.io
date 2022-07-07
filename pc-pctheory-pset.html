@@ -21,12 +21,57 @@
                 <h2>2.9. pctheory.pset</h2>
                 <p>
                     This module contains functions for working with pitch sets, or psets.
-                    A pseg is represented as a <span class="code pyKeyword">set</span>
+                    A pset is represented as a <span class="code pyKeyword">set</span>
                     of <span class="code pyClass">Pitch12</span> or <span class="code pyClass">Pitch24</span>
                     elements.
                 </p>
                 <div class="codeReference">
-                    
+                    <h5><span class="code">fb_class(pset: <span class="pyKeyword">set</span>, p0: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Gets the FB&hyphen;class (figured bass) of a pset.
+                    </p>
+                    <h5><span class="code">invert(pset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">Pitch12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">Pitch24</span>}</span></h5>
+                    <p>
+                        Inverts a pset.
+                    </p>
+                    <h5><span class="code">m21_make_pset</span>(item)</span><span class="returnType code">{<span class="pyClass">Pitch12</span>}</span></h5>
+                    <p>
+                        Makes a pset from a music21 object. Supported objects include <span class="code pyClass">Note</span>,
+                        <span class="code pyClass">Pitch</span>, and <span class="code pyClass">Chord</span>.
+                    </p>
+                    <h5><span class="code">p_ic_matrix(pset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[[<span class="pyKeyword">int</span>]]</span></h5>
+                    <p>
+                        Gets the ic&hyphen;matrix of a pset.
+                    </p>
+                    <h5><span class="code">p_ic_roster(pset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyKeyword">int</span>: <span class="pyKeyword">int</span>}</span></h5>
+                    <p>
+                        Gets the ic&hyphen;roster of a pset.
+                    </p>
+                    <h5><span class="code">p_set_class(pset: <span class="pyKeyword">set</span>, p0: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Gets the set&hyphen;class of a pset.
+                    </p>
+                    <h5><span class="code">pcint_class(pset: <span class="pyKeyword">set</span>, p0: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Gets the PCINT&hyphen;class of a pset.
+                    </p>
+                    <h5><span class="code">pm_similarity(pset1: <span class="pyKeyword">set</span>, pset2: <span class="pyKeyword">set</span>, ic_roster1=<span class="pyKeyword">None</span>, ic_roster2=<span class="pyKeyword">None</span>)</span><span class="returnType code">(<span class="pyKeyword">int</span>, <span class="pyKeyword">int</span>)</span></h5>
+                    <p>
+                        Gets the pitch-measure (PM) similarity between <span class="code">pset1</span> and <span class="code">pset2</span>.
+                        If ic&hyphen;rosters are not provided, they are calculated automatically.
+                    </p>
+                    <h5><span class="code">subsets(pset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[{<span class="pyClass">Pitch12</span>}]</span>or<span class="returnType2 code">[{<span class="pyClass">Pitch24</span>}]</span></h5>
+                    <p>
+                        Gets a sorted list of subsets of the provided pset.
+                    </p>
+                    <h5><span class="code">transform(pset: <span class="pyKeyword">set</span>, transformation: <span class="pyClass">UTO</span>)</span><span class="returnType code">{<span class="pyClass">Pitch12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">Pitch24</span>}</span></h5>
+                    <p>
+                        Transforms a pset by a UTO.
+                    </p>
+                    <h5><span class="code">transpose(pset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{<span class="pyClass">Pitch12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">Pitch24</span>}</span></h5>
+                    <p>
+                        Transposes a pset by <i>n</i>.
+                    </p>
                 </div>
             </div>
             <aside class="sidebar">

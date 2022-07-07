@@ -26,7 +26,35 @@
                     elements.
                 </p>
                 <div class="codeReference">
-                    
+                    <h5><span class="code">intervals(pseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <p>
+                        Gets the succession of intervals in a pseg.
+                    </p>
+                    <h5><span class="code">invert(pseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">Pitch24</span>]</span></h5>
+                    <p>
+                        Inverts a pseg.
+                    </p>
+                    <h5><span class="code">m21_make_pseg</span>(item)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span></h5>
+                    <p>
+                        Makes a pseg from a music21 object. Supported objects include <span class="code pyClass">Note</span>,
+                        <span class="code pyClass">Pitch</span>, and <span class="code pyClass">Chord</span>.
+                    </p>
+                    <h5><span class="code">multiply_order(pseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">Pitch24</span>]</span></h5>
+                    <p>
+                        Multiplies the order of a pseg, mod the length of the pseg.
+                    </p>
+                    <h5><span class="code">retrograde(pseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">Pitch24</span>]</span></h5>
+                    <p>
+                        Retrogrades a pseg and returns a copy.
+                    </p>
+                    <h5><span class="code">rotate(pseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">Pitch24</span>]</span></h5>
+                    <p>
+                        Rotates a pseg to the left <i>n</i> positions.
+                    </p>
+                    <h5><span class="code">transpose(pseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">Pitch12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">Pitch24</span>]</span></h5>
+                    <p>
+                        Transposes a pseg by <i>n</i>.
+                    </p>
                 </div>
             </div>
             <aside class="sidebar">
