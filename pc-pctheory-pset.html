@@ -26,6 +26,112 @@
                     elements.
                 </p>
                 <div class="codeReference">
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">Sieve12</span></span></h4>
+                    <p>
+                        Represents a pitch sieve in Xenakis&apos;s sieve theory. A pitch sieve is a collection of tuples (<i>m</i>, <i>i</i>),
+                        where <i>m</i> is a modulus and <i>i</i> represents a congruence&hyphen;class mod <i>m</i>.
+                        For example, the sieve defined by the tuples (3, 2), (4, 1) gives rise to the integer succession
+                        &lt;1, 2, 5, 8, 9, 11...&gt; which can be used as a scale.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">Sieve12</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.__init__(tuples, base_pitch)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">Sieve12</span>. You must provide a collection of tuples
+                            and a starting pitch (the lowest pitch in the sieve).
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Sieve12</span> read-only properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.base_pitch<span class="returnType pyClass">Pitch12</span></span></h5>
+                        <p>
+                            The lowest pitch in the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.intervals<span class="returnType">[<span class="pyKeyword">int</span>]</span></h5>
+                        <p>
+                            The succession of intervals between adjacent pitches for a complete period.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.period<span class="returnType pyKeyword">int</span></span></h5>
+                        <p>
+                            The intervallic distance between pitch 0 and the pitch at which the sieve begins to repeat itself.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.tuples<span class="returnType pyKeyword">set</span></span></h5>
+                        <p>
+                            The set of tuples that define the sieve.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Sieve12</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.add_tuples(*args)</span></h5>
+                        <p>
+                            Adds one or more tuples to the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.get_range(p0, p1)</span><span class="returnType code">{<span class="pyClass">Pitch12</span>}</span></h5>
+                        <p>
+                            Gets all pitches in the sieve between p0 and p1, inclusive.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.intersection(sieve)</span><span class="returnType code"><span class="pyClass">Sieve12</span></span></h5>
+                        <p>
+                            Returns the intersection of this sieve and another sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.is_in_sieve(p)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                        <p>
+                            Whether or not a pitch is in the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve12</span>.union(sieve)</span><span class="returnType code"><span class="pyClass">Sieve12</span></span></h5>
+                        <p>
+                            Returns the union of this sieve and another sieve.
+                        </p>
+                    </div>
+                    <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">Sieve24</span></span></h4>
+                    <p>
+                        Represents a microtonal pitch sieve in Xenakis&apos;s sieve theory. A pitch sieve is a collection of tuples (<i>m</i>, <i>i</i>),
+                        where <i>m</i> is a modulus and <i>i</i> represents a congruence&hyphen;class mod <i>m</i>.
+                        For example, the sieve defined by the tuples (3, 2), (4, 1) gives rise to the integer succession
+                        &lt;1, 2, 5, 8, 9, 11...&gt; which can be used as a scale.
+                    </p>
+                    <div class="codeIndent1Reference">
+                        <h4><span class="subhead"><span class="code pyClass">Sieve24</span> constructor</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.__init__(tuples, base_pitch)</span></h5>
+                        <p>
+                            Constructs a <span class="code pyClass">Sieve24</span>. You must provide a collection of tuples
+                            and a starting pitch (the lowest pitch in the sieve).
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Sieve24</span> read-only properties</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.base_pitch<span class="returnType pyClass">Pitch24</span></span></h5>
+                        <p>
+                            The lowest pitch in the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.intervals<span class="returnType">[<span class="pyKeyword">int</span>]</span></h5>
+                        <p>
+                            The succession of intervals between adjacent pitches for a complete period.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.period<span class="returnType pyKeyword">int</span></span></h5>
+                        <p>
+                            The intervallic distance between pitch 0 and the pitch at which the sieve begins to repeat itself.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.tuples<span class="returnType pyKeyword">set</span></span></h5>
+                        <p>
+                            The set of tuples that define the sieve.
+                        </p>
+                        <h4><span class="subhead"><span class="code pyClass">Sieve24</span> methods</span></h4>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.add_tuples(*args)</span></h5>
+                        <p>
+                            Adds one or more tuples to the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.get_range(p0, p1)</span><span class="returnType code">{<span class="pyClass">Pitch24</span>}</span></h5>
+                        <p>
+                            Gets all pitches in the sieve between p0 and p1, inclusive.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.intersection(sieve)</span><span class="returnType code"><span class="pyClass">Sieve24</span></span></h5>
+                        <p>
+                            Returns the intersection of this sieve and another sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.is_in_sieve(p)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                        <p>
+                            Whether or not a pitch is in the sieve.
+                        </p>
+                        <h5><span class="code"><span class="pyClass">Sieve24</span>.union(sieve)</span><span class="returnType code"><span class="pyClass">Sieve24</span></span></h5>
+                        <p>
+                            Returns the union of this sieve and another sieve.
+                        </p>
+                    </div>
                     <h5><span class="code">fb_class(pset: <span class="pyKeyword">set</span>, p0: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         Gets the FB&hyphen;class (figured bass) of a pset.
