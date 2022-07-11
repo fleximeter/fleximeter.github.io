@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>fleximeter</title>
+        <link href="css/stylesheet.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <header><h1><a href="index.html">fleximeter composition and analysis software</a></h1></header>
+        <nav>
+            <div class="navDiv">
+                <a href="pctheory.html">pctheory</a>
+                <a href="set-manipulator.html">SetManipulator</a>
+                <a href="doc.html">Documentation</a>
+                <a href="about.html">About</a>
+                <a href="https://jeffreymartincomposer.com/">Composer Website</a>
+            </div>
+        </nav>
+
+        <div class="mainDiv">
+            <div class="article">
+                <h2>2. Atonal theory</h2>
+                <h3>2.1. Introduction</h3>
+                <p>
+                    Atonal theory is a branch of music theory that deals with atonal music, much of it 
+                    written using the twelve-tone method. The theory uses mathematical concepts, most
+                    notably from set theory and group theory, to model collections of pitches and pitch-classes
+                    and transformations of these collections. It is a flexible model, and offers compositional
+                    and analytical insight to many different kinds of music, including some scalar and tonal
+                    music. It is particularly helpful when working with nonstandard harmonies in the
+                    12&hyphen;EDO system, whether the context is tonal, quasi&hyphen;tonal, or atonal.
+                </p>
+                <p>
+                    A thorough introduction to atonal theory is beyond the scope of this documentation.
+                    Instead, this page explains the conventions used in the pctheory package. These are
+                    based on the work of Robert Morris, so readers familiar with <i>Composition with 
+                    Pitch&hyphen;Classes: A Theory of Compositional Design</i> should already
+                    be familiar with them.
+                </p>
+                <p>
+                    We begin with pitch&hyphen;classes in twelve&hyphen;tone equal&hyphen;temperament.
+                    A pitch&hyphen;class is often represented with a name like C, D, E, etc. In atonal theory,
+                    it is often useful to assign a number to each pitch&hyphen;class. So C becomes 0, C&hyphen;sharp
+                    becomes 1, D becomes 2, etc. Often theorists use T for 10 and E for 11, but pctheory follows
+                    the convention of using A for 10 and B for 11 instead. This avoids confusion with the use of
+                    T to represent the transposition operator, and also follows the standard for hexadecimal digits.
+                </p>
+                <p>
+                    However, it is also possible to work directly with individual pitches. In pitch&hyphen;space,
+                    0 is C4, 1 is C&hyphen;sharp 4, 2 is D4, -1 is B3, -2 is B-flat 3, etc. Positive numbers represent
+                    notes above C4 and negative numbers represent notes below C4. This is in contrast to the standard
+                    MIDI numbering, where 60 is C4. It is then possible to make sets and permutations of pitches,
+                    just as we would with pitch-classes. This is useful when working with Xenakis&apos;s sieves
+                    and fixed&hyphen;pitch formations.
+                </p>
+                <p>
+                    Any collection of pitch-classes, whether a chord, scale, or something else, can be modeled
+                    with a mathematical <i>set</i>. A set is written with curly braces {} and contains 0 or more
+                    <i>elements</i>. Sets cannot contain duplicate elements, and the elements are not ordered with
+                    respect to each other. In atonal theory, we could represent the diatonic scale as the set
+                    {4, 9, 0, B, 7, 2, 5}. Often it would be notated {0, 2, 4, 5, 7, 9, B}, which is exactly the
+                    same set. I show both orderings to demonstrate that order does not matter in mathematical sets.
+                </p>
+                <p>
+                    Because the pitch-classes are represented as numbers, it is possible to perform mathematical
+                    operations on them. All pitch-class operations are done mod 12. Transposition (T) is addition:
+                    T<sub><i>n</i></sub>(<i>x</i>) = <i>x</i> + <i>n</i> mod 12. Inversion (I) is often defined
+                    as I(<i>x</i>) = 0 - <i>x</i> mod 12, but it is also identical to 11<i>x</i> mod 12. We will
+                    use the latter definition. The operation of multiplication (M) is defined as 
+                    M<sub><i>m</i></sub>(<i>x</i>) = <i>mx</i> mod 12. Inversion is M<sub>11</sub>. Other useful
+                    M operators are M<sub>5</sub> and M<sub>7</sub>. M<sub>1</sub> is an identity operator; it leaves
+                    pitch-classes unchanged. The combined transposition and inversion operator, T<sub><i>n</i></sub>I
+                    is redefined as T<sub><i>n</i></sub>M<sub>11</sub>(<i>x</i>) = 11<i>x</i> + <i>n</i> mod 12. The
+                    T<sub><i>n</i></sub>M<sub><i>m</i></sub> operator is defined as 
+                    T<sub><i>n</i></sub>M<sub><i>m</i></sub>(<i>x</i>) = <i>mx</i> + <i>n</i> mod 12.
+                </p>
+            </div>
+            <aside class="sidebar">
+                <h3>Documentation for pctheory</h3>
+                <hr/>
+                <p><a href="pc-pctheory.html">1. Introduction</a></p>
+                <p><a href="pc-pctheoryintro.html">2. Atonal theory</a></p>
+                <p><a href="pc-pctheorym.html">3. pctheory module reference</a></p>
+                <div class="indent1">
+                    <p><a href="pc-pctheory-array.html">3.1. pctheory.array</a></p>
+                    <p><a href="pc-pctheory-cseg.html">3.2. pctheory.cseg</a></p>
+                    <p><a href="pc-pctheory-group.html">3.3. pctheory.group</a></p>
+                    <p><a href="pc-pctheory-pcseg.html">3.4. pctheory.pcseg</a></p>
+                    <p><a href="pc-pctheory-pcset.html">3.5. pctheory.pcset</a></p>
+                    <p><a href="pc-pctheory-pitch.html">3.6. pctheory.pitch</a></p>
+                    <p><a href="pc-pctheory-poset.html">3.7. pctheory.poset</a></p>
+                    <p><a href="pc-pctheory-pseg.html">3.8. pctheory.pseg</a></p>
+                    <p><a href="pc-pctheory-pset.html">3.9. pctheory.pset</a></p>
+                    <p><a href="pc-pctheory-set_complex.html">3.10. pctheory.set_complex</a></p>
+                    <p><a href="pc-pctheory-tables.html">3.11. pctheory.tables</a></p>
+                    <p><a href="pc-pctheory-tempo.html">3.12. pctheory.tempo</a></p>
+                    <p><a href="pc-pctheory-transformations.html">3.13. pctheory.transformations</a></p>
+                    <p><a href="pc-pctheory-util.html">3.14. pctheory.util</a></p>
+                </div>
+            </aside>
+        </div>
+        <footer>
+            <div class="footerDiv">
+                <p>
+                    Copyright &copy;2022 by Jeffrey Martin. All rights reserved. <a href="https://jeffreymartincomposer.com/">https://jeffreymartincomposer.com/</a>
+                </p>
+            </div>
+        </footer>
+    </body>
+</html>
