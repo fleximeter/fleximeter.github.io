@@ -185,11 +185,9 @@
                         a random starting pc will be selected. The starting pc can be an <span class="code pyKeyword">int</span>
                         or <span class="code pyClass">PitchClass24</span>.
                     </p>
-                    <h5><span class="code">generate_random_all_interval_row(name_tables=<span class="pyKeyword">None</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <h5><span class="code">generate_random_all_interval_row(starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
                     <p>
-                        Generates a random all-interval twelve-tone row. All of the row generators are present in a name table,
-                        which you can generate with the function <span class="code">tables.create_tables_row()</span>.
-                        If no name table is provided, it will be generated automatically. The starting pc can be an <span class="code pyKeyword">int</span>
+                        Generates a random all-interval twelve-tone row. The starting pc can be an <span class="code pyKeyword">int</span>
                         or <span class="code pyClass">PitchClass12</span>.
                     </p>
                     <h5><span class="code">generate_random_pcseg12(length: <span class="pyKeyword">int</span>, non_duplicative: <span class="pyKeyword">False</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
@@ -214,12 +212,9 @@
                     <p>
                         Gets the interval succession of a pcseg.
                     </p>
-                    <h5><span class="code">imb_n(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>, name_tables=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">SetClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">SetClass24</span>]</span></h5>
+                    <h5><span class="code">imb_n(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">SetClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">SetClass24</span>]</span></h5>
                     <p>
                         Gets the succession of imbricated set-classes of cardinality <i>n</i> from a pcseg.
-                        If you are working with <span class="code pyClass">PitchClass12</span> objects, and if
-                        you have created a name table for chromatic set-classes, you can provide that to this function.
-                        Otherwise, a table will be generated.
                     </p>                    
                     <h5><span class="code">invert(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
