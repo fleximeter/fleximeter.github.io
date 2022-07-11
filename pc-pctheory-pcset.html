@@ -135,7 +135,11 @@
                             <span class="code pyKeyword">tuple</span> objects containing all two-partitions of the current
                             set-class. Particularly applicable to the music of Milton Babbitt.
                         </p>
-                        <h5><span class="code"><span class="pyClass">SetClass12</span>.get_abstract_subset_classes()<span class="returnType">{<span class="pyClass">SetClass12</span>}</span></span></h5>
+                        <h5><span class="code"><span class="pyClass">SetClass12</span>.get_set_classes()<span class="returnType">[<span class="pyClass">SetClass12</span>]</span></span></h5>
+                        <p>
+                            Returns a <span class="code pyKeyword">list</span> of all 224 <span class="code pyClass">SetClass12</span>s.
+                        </p>
+                        <h5><span class="code">@staticmethod </span><span class="pyClass">SetClass12</span>.get_abstract_subset_classes()<span class="returnType">{<span class="pyClass">SetClass12</span>}</span></span></h5>
                         <p>
                             Returns a <span class="code pyKeyword">set</span> of <span class="code pyClass">SetClass12</span> objects
                             representing all set-classes abstractly contained within the current set-class. 
@@ -146,7 +150,7 @@
                             representing the Z-relation of the current set-class. If there is no Z-relation,
                             returns an empty <span class="code pyClass">SetClass12</span> object. 
                         </p>
-                        <h5><span class="code"><span class="pyClass">SetClass12</span>.is_valid_name(name: <span class="pyKeyword">str</span>)<span class="returnType pyKeyword">bool</span></span></h5>
+                        <h5><span class="code">@staticmethod <span class="pyClass">SetClass12</span>.is_valid_name(name: <span class="pyKeyword">str</span>)<span class="returnType pyKeyword">bool</span></span></h5>
                         <p>
                             Determines if a provided set-class name is valid. Valid name types include <span class="code pyStr"><q>[xxx]</q></span> (prime form),
                             <span class="code pyStr"><q>x-x</q></span> (Forte), and <span class="code pyStr"><q>(x-x)[xxx]</q></span> (Morris).
