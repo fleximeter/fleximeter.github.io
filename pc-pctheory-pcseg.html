@@ -173,6 +173,11 @@
                         keys and <span class="code pyKeyword">int</span> values (which represent the index of the
                         pitch-class in the row).
                     </p>
+                    <h5><span class="code">find_otos(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">{<span class="pyClass">OTO</span>}</span></h5>
+                    <p>
+                        Finds all OTOs that transform <span class="code">pcseg1</span> so that it contains <span class="code">pcseg2</span>.
+                        This function can be used to find individual pcs, subsegs, or the entire transformed pcseg.
+                    </p>
                     <h5><span class="code">generate_pcseg12_from_interval_list(interval_list: <span class="pyKeyword">list</span>, starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
                     <p>
                         Generates a chromatic pcseg from an interval list. If the starting pc is <span class="code pyKeyword">None</span>,

@@ -281,6 +281,11 @@
                             <span class="code pyClass">SetClass24</span> objects to be printed.
                         </p>
                     </div>
+                    <h5><span class="code">find_utos(original_pcset: <span class="pyKeyword">set</span>, transformed_pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <p>
+                        Finds all UTOs that transform <span class="code">original_pcset</span> so that it contains <span class="code">transformed_pcset</span>.
+                        This function can be used to find individual pcs, subsets, or the entire transformed pcset.
+                    </p>
                     <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Gets the complement of a provided pcset. This is not the abstract complement of a set-class.
@@ -288,10 +293,6 @@
                     <h5><span class="code">get_corpus(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass24</span>)}</span></h5>
                     <p>
                         Gets all UTO transformations of a provided pcset, as a <span class="code pyKeyword">set</span>.
-                    </p>
-                    <h5><span class="code">get_uto(original_pcset: <span class="pyKeyword">set</span>, transformed_pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
-                    <p>
-                        Gets all UTOs that transform <span class="code">original_pcset</span> into <span class="code">transformed_pcset</span>, as a <span class="code pyKeyword">set</span>.
                     </p>
                     <h5><span class="code">invert(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
