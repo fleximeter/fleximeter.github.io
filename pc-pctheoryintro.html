@@ -36,30 +36,35 @@
                     Pitch&hyphen;Classes: A Theory of Compositional Design</i> should already
                     be familiar with them.
                 </p>
+                <h3>2.2. Pitch and pitch&hyphen;class</h3>
                 <p>
                     We begin with pitch&hyphen;classes in twelve&hyphen;tone equal&hyphen;temperament.
                     A pitch&hyphen;class is often represented with a name like C, D, E, etc. In atonal theory,
-                    it is often useful to assign a number to each pitch&hyphen;class. So C becomes 0, C&hyphen;sharp
-                    becomes 1, D becomes 2, etc. Often theorists use T for 10 and E for 11, but pctheory follows
-                    the convention of using A for 10 and B for 11 instead. This avoids confusion with the use of
+                    it is often useful to assign a number to each pitch&hyphen;class. So C becomes 0, C&#x266f;
+                    becomes 1, D becomes 2, D&#x266f; becomes 3, etc. Often theorists use T for B&#x266d; and E for 
+                    B&#x266e; instead of the numbers 10 and 11, but pctheory follows
+                    the convention of using A and B instead of T and E. This avoids confusion with the use of
                     T to represent the transposition operator, and also follows the standard for hexadecimal digits.
                 </p>
                 <p>
-                    However, it is also possible to work directly with individual pitches. In pitch&hyphen;space,
-                    0 is C4, 1 is C&hyphen;sharp 4, 2 is D4, -1 is B3, -2 is B-flat 3, etc. Positive numbers represent
+                    It is also possible to work directly with individual pitches. In pitch&hyphen;space,
+                    0 is C4, 1 is C&#x266f;4, 2 is D4, -1 is B3, -2 is B&#x266d;3, etc. Positive numbers represent
                     notes above C4 and negative numbers represent notes below C4. This is in contrast to the standard
                     MIDI numbering, where 60 is C4. It is then possible to make sets and permutations of pitches,
                     just as we would with pitch-classes. This is useful when working with Xenakis&apos;s sieves
                     and fixed&hyphen;pitch formations.
                 </p>
+                <h3>2.3. Sets</h3>
                 <p>
                     Any collection of pitch-classes, whether a chord, scale, or something else, can be modeled
                     with a mathematical <i>set</i>. A set is written with curly braces {} and contains 0 or more
                     <i>elements</i>. Sets cannot contain duplicate elements, and the elements are not ordered with
-                    respect to each other. In atonal theory, we could represent the diatonic scale as the set
+                    respect to each other. In atonal theory, we call sets of pitch&hyphen;classes <i>pcsets</i>.
+                    We could represent the diatonic scale as the pcset
                     {4, 9, 0, B, 7, 2, 5}. Often it would be notated {0, 2, 4, 5, 7, 9, B}, which is exactly the
                     same set. I show both orderings to demonstrate that order does not matter in mathematical sets.
                 </p>
+                <h3>2.4. Unordered operations</h3>
                 <p>
                     Because the pitch-classes are represented as numbers, it is possible to perform mathematical
                     operations on them. All pitch-class operations are done mod 12. Transposition (T) is addition:
@@ -69,9 +74,41 @@
                     M<sub><i>m</i></sub>(<i>x</i>) = <i>mx</i> mod 12. Inversion is M<sub>11</sub>. Other useful
                     M operators are M<sub>5</sub> and M<sub>7</sub>. M<sub>1</sub> is an identity operator; it leaves
                     pitch-classes unchanged. The combined transposition and inversion operator, T<sub><i>n</i></sub>I
-                    is redefined as T<sub><i>n</i></sub>M<sub>11</sub>(<i>x</i>) = 11<i>x</i> + <i>n</i> mod 12. The
-                    T<sub><i>n</i></sub>M<sub><i>m</i></sub> operator is defined as 
+                    is redefined as T<sub><i>n</i></sub>M<sub>11</sub>(<i>x</i>) = 11<i>x</i> + <i>n</i> mod 12.
+                    The general T<sub><i>n</i></sub>M<sub><i>m</i></sub> operator is defined as 
                     T<sub><i>n</i></sub>M<sub><i>m</i></sub>(<i>x</i>) = <i>mx</i> + <i>n</i> mod 12.
+                    Any T<sub><i>n</i></sub> or T<sub><i>n</i></sub>M<sub><i>m</i></sub> operator can be represented
+                    using the <span class="code pyClass">UTO</span> class.
+                </p>
+                <h3>2.5. Set-classes</h3>
+                <p>
+                    Any two pcsets that can be mapped into each other under the operations of transposition
+                    and/or inversion can be said to belong to the same <i>set&hyphen;class</i>. Any 
+                    set&hyphen;class can be represented by its <i>prime form</i>, a special set in the class. The calculation
+                    of prime forms is beyond the scope of this documentation, and is done automatically in pctheory
+                    using the <span class="code pyClass">SetClass12</span> class. There are 224 set&hyphen;classes
+                    in the chromatic system.
+                </p>
+                <h3>2.6. Rows, permutations, and segments</h3>
+                <p>
+                    Twelve&hyphen;tone rows are nonduplicative orderings of the twelve pitch&hyphen;classes.
+                    This means they are mathematical permutations. In atonal theory, permutations of pitch&hyphen;classes
+                    are often called pitch&hyphen;class segments, or pcsegs. A pcseg may or may not
+                    have duplicate pitch&hyphen;classes, and can be of any length. A row is a 12&hyphen;note
+                    nonduplicative pcseg. The pctheory package has multiple functions for generating random pcsegs.
+                    Any melody can be modeled as a pcseg, or more precisely as a pitch segment (pseg). Any chord
+                    may also be modeled as a pcseg or pseg &ndash; whether the ordering is from top to bottom or from
+                    bottom to top is arbitrary.
+                </p>
+                <h3>2.7. Microtonal pitch and pitch-classes</h3>
+                <p>
+                    The pctheory package contains functionality for working with the 24-tone equally&hyphen;tempered
+                    microtonal scale. Microtonal pitch&hyphen;classes are represented with the numbers 0 to 23,
+                    written as 00, 01, 02, ... 21, 22, 23. Microtonal pitches follow the same convention as chromatic
+                    pitches, but now we move up a quarter&hyphen;step with each number instead of a half&hyphen;step.
+                    Pcsets (and pcsegs) can be made of microtonal pitch&hyphen;classes. The functionality for microtonal pcsets is
+                    somewhat more limited because of the comparatively enormous number of microtonal set&hyphen;classes
+                    &ndash; 352,698 set&hyphen;classes total.
                 </p>
             </div>
             <aside class="sidebar">
