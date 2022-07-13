@@ -227,11 +227,15 @@
                         whether the pcset contains <span class="code pyClass">PitchClass12</span> or 
                         <span class="code pyClass">PitchClass24</span> elements.
                     </p>
-                    <h5><span class="code">is_valid_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <h5><span class="code">is_all_interval_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <p>
+                        Determines if a pcseg is a valid all&hyphen;interval row.
+                    </p>                    
+                    <h5><span class="code">is_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
                         Determines if a pcseg is a valid row.
                     </p>                    
-                    <h5><span class="code">is_valid_rgen(rgen: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <h5><span class="code">is_row_generator(rgen: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
                         Determines if a provided row generator (rgen) can generate a valid row.
                         A row generator is a succession of 11 intervals.
