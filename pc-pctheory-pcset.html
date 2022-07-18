@@ -151,6 +151,10 @@
                             representing the Z-relation of the current set-class. If there is no Z-relation,
                             returns an empty <span class="code pyClass">SetClass12</span> object. 
                         </p>
+                        <h5><span class="code"><span class="pyClass">SetClass12</span>.is_all_combinatorial_hexachord()</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                        <p>
+                            Determines if the set&hyphen;class is an all&hyphen;combinatorial hexachord (ACH).
+                        </p>    
                         <h5><span class="code">@staticmethod <span class="pyClass">SetClass12</span>.is_valid_name(name: <span class="pyKeyword">str</span>)<span class="returnType pyKeyword">bool</span></span></h5>
                         <p>
                             Determines if a provided set-class name is valid. Valid name types include <span class="code pyStr"><q>[xxx]</q></span> (prime form),
@@ -287,6 +291,10 @@
                         Finds all UTOs that transform <span class="code">pcset1</span> so that it contains <span class="code">pcset2</span>.
                         This function can be used to find individual pcs, subsets, or the entire transformed pcset.
                     </p>
+                    <h5><span class="code">get_all_combinatorial_hexachord(name: <span class="pyKeyword">str</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span></h5>
+                    <p>
+                        Gets an all&hyphen;combinatorial hexachord (ACH) by name (A through F).
+                    </p>
                     <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Gets the complement of a provided pcset. This is not the abstract complement of a set-class.
@@ -300,6 +308,10 @@
                         Inverts a pcset by using the M<sub>11</sub> or M<sub>23</sub> operations, depending on
                         whether the pcset contains <span class="code pyClass">PitchClass12</span> or 
                         <span class="code pyClass">PitchClass24</span> elements.
+                    </p>
+                    <h5><span class="code">is_all_combinatorial_hexachord(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <p>
+                        Determines if a pcset is an all&hyphen;combinatorial hexachord (ACH).
                     </p>
                     <h5><span class="code">make_pcset12(*args)<span class="returnType">{<span class="pyClass">PitchClass12</span>}</span></span></h5>
                     <p>

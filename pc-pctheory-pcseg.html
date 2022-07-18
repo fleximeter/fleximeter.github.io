@@ -162,6 +162,18 @@
                             <span class="code pyClass">TwelveToneMatrix</span> objects to be printed.
                         </p>
                     </div>
+                    <h5><span class="code">are_combinatorial2(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
+                    <p>
+                        Determines if two rows are hexachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                    </p>
+                    <h5><span class="code">are_combinatorial3(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>, row3: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
+                    <p>
+                        Determines if three rows are tetrachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                    </p>
+                    <h5><span class="code">are_combinatorial4(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>, row3: <span class="pyKeyword">list</span>, row4: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
+                    <p>
+                        Determines if four rows are trichordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                    </p>
                     <h5><span class="code">bip_n(imb_n: <span class="pyKeyword">list</span>)<span class="returnType">[<span class="pyKeyword">int</span>]</span></span></h5>
                     <p>
                         Gets the basic interval pattern (BIP) of a pcseg. Requires a list of imbricated set-classes
@@ -231,6 +243,10 @@
                     <h5><span class="code">is_all_interval_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
                         Determines if a pcseg is a valid all&hyphen;interval row.
+                    </p>
+                    <h5><span class="code">is_link_chord(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <p>
+                        Determines if a pcseg is a Link chord (a twelve&hyphen;tone row with the all&hyphen;trichord hexachord (ATH) as a contiguous subset).
                     </p>                    
                     <h5><span class="code">is_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
@@ -281,7 +297,10 @@
                     <p>
                         Transposes a pcseg using the operator T<sub><i>n</i></sub>.
                     </p>
-                    
+                    <h5><span class="code">transpositional_combination(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <p>
+                        Transpositionally combines two pcsegs. This is Boulez&apos;s &ldquo;multiplication.&rdquo;
+                    </p>
                 </div>
             </div>
             <aside class="sidebar">
