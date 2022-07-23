@@ -20,10 +20,15 @@
         <div class="mainDiv">
             <div class="article">
                 <h2>3.5. pctheory.pcset</h2>
-                <p>This module contains classes and functions for working with pcsets, or sets of
+                <p>
+                    This module contains classes and functions for working with pcsets, or sets of
                     pitch-classes. A pcset is represented as a <span class="code pyKeyword">set</span>
                     of <span class="code pyClass">PitchClass12</span> or <span class="code pyClass">PitchClass24</span>
-                    elements.</p>
+                    elements.
+                </p>
+                <p>
+                    Functions marked with * can be used with chromatic or microtonal pcsets.
+                </p>
                 <div class="codeReference">
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">SetClass12</span></span></h4>
                     <p>
@@ -286,7 +291,7 @@
                             <span class="code pyClass">SetClass24</span> objects to be printed.
                         </p>
                     </div>
-                    <h5><span class="code">find_utos(pcset1: <span class="pyKeyword">set</span>, pcset2: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <h5><span class="code">*find_utos(pcset1: <span class="pyKeyword">set</span>, pcset2: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
                     <p>
                         Finds all UTOs that transform <span class="code">pcset1</span> so that it contains <span class="code">pcset2</span>.
                         This function can be used to find individual pcs, subsets, or the entire transformed pcset.
@@ -295,23 +300,23 @@
                     <p>
                         Gets an all&hyphen;combinatorial hexachord (ACH) by name (A through F).
                     </p>
-                    <h5><span class="code">get_complement(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*get_complement(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Gets the complement of a provided pcset. This is not the abstract complement of a set-class.
                     </p>
-                    <h5><span class="code">get_complement_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <h5><span class="code">*get_complement_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
                     <p>
                         Gets all <span class="code pyClass">UTO</span>s that map <span class="code">pcset</span> into its complement.
                     </p>
-                    <h5><span class="code">get_corpus(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass24</span>)}</span></h5>
+                    <h5><span class="code">*get_corpus(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass24</span>)}</span></h5>
                     <p>
                         Gets all UTO transformations of a provided pcset, as a <span class="code pyKeyword">set</span>.
                     </p>
-                    <h5><span class="code">get_self_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <h5><span class="code">*get_self_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">UTO</span>}</span></h5>
                     <p>
                         Gets all <span class="code pyClass">UTO</span>s that map <span class="code">pcset</span> into itself.
                     </p>
-                    <h5><span class="code">invert(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*invert(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Inverts a pcset by using the M<sub>11</sub> or M<sub>23</sub> operations, depending on
                         whether the pcset contains <span class="code pyClass">PitchClass12</span> or 
@@ -329,17 +334,17 @@
                     <p>
                         Creates a microtonal pcset from one or more <span class="code pyKeyword">int</span> values.
                     </p>
-                    <h5><span class="code">make_subset_graph(set_class, smallest_cardinality=1, show_graph=<span class="pyKeyword">False</span>, size=(800,1100))<span class="returnType">{networkx.<span class="pyClass">DiGraph</span>}</span></span></h5>
+                    <h5><span class="code">*make_subset_graph(set_class, smallest_cardinality=1, show_graph=<span class="pyKeyword">False</span>, size=(800,1100))<span class="returnType">{networkx.<span class="pyClass">DiGraph</span>}</span></span></h5>
                     <p>
                         Makes a subset graph, using a provided <span class="code pyClass">SetClass12</span> or 
                         <span class="code pyClass">SetClass24</span>. If you choose to show the graph, it will be generated
                         as a PyVis visualization.
                     </p>
-                    <h5><span class="code">multiply(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*multiply(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Multiplies a pcset using the operator M<sub><i>n</i></sub>.
                     </p>
-                    <h5><span class="code">partitions2(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[({<span class="pyClass">PitchClass12</span>}, {<span class="pyClass">PitchClass12</span>})]</span>or<span class="returnType2 code">[({<span class="pyClass">PitchClass24</span>}, {<span class="pyClass">PitchClass24</span>})]</span></h5>
+                    <h5><span class="code">*partitions2(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[({<span class="pyClass">PitchClass12</span>}, {<span class="pyClass">PitchClass12</span>})]</span>or<span class="returnType2 code">[({<span class="pyClass">PitchClass24</span>}, {<span class="pyClass">PitchClass24</span>})]</span></h5>
                     <p>
                         Gets a list of all two-partitions of a provided pcset. Each two-partition is a tuple of pcsets.
                     </p>
@@ -347,15 +352,15 @@
                     <p>
                         Filters a list of chromatic pcsets. Returns a list that only contains pcsets in the set-class <span class="code">name</span>. 
                     </p>
-                    <h5><span class="code">subsets(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[{<span class="pyClass">PitchClass12</span>}]</span>or<span class="returnType2 code">[{<span class="pyClass">PitchClass24</span>}]</span></h5>
+                    <h5><span class="code">*subsets(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[{<span class="pyClass">PitchClass12</span>}]</span>or<span class="returnType2 code">[{<span class="pyClass">PitchClass24</span>}]</span></h5>
                     <p>
                         Generates all subsets of a provided pcset, and returns them in sorted order.
                     </p>
-                    <h5><span class="code">transpose(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*transpose(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
                         Transposes a pcset using the operator T<sub><i>n</i></sub>.
                     </p>
-                    <h5><span class="code">visualize(pcset: <span class="pyKeyword">set</span>)</span></h5>
+                    <h5><span class="code">*visualize(pcset: <span class="pyKeyword">set</span>)</span></h5>
                     <p>
                         Creates a string visualization of a pcset. The string has length 12 or 24, and contains <span class="code pyStr">&quot;X&quot;</span>
                         or a space for each of the 12 or 24 pitch-classes, depending on whether or not that pitch-class is present.

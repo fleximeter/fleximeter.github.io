@@ -26,6 +26,9 @@
                     of <span class="code pyClass">PitchClass12</span> or <span class="code pyClass">PitchClass24</span>
                     elements. A row is a pcseg that contains all of the pitch-classes in some order.
                 </p>
+                <p>
+                    Functions marked with * can be used with chromatic or microtonal pcsegs.
+                </p>
                 <div class="codeReference">
                     <h4><span class="code"><span class="pyKeyword">class</span> <span class="pyClass">InvarianceMatrix</span></span></h4>
                     <p>
@@ -164,29 +167,29 @@
                     </div>
                     <h5><span class="code">are_combinatorial2(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
                     <p>
-                        Determines if two rows are hexachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                        Determines if two twelve&hyphen;tone rows are hexachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
                     </p>
                     <h5><span class="code">are_combinatorial3(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>, row3: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
                     <p>
-                        Determines if three rows are tetrachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                        Determines if three twelve&hyphen;tone rows are tetrachordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
                     </p>
                     <h5><span class="code">are_combinatorial4(row1: <span class="pyKeyword">list</span>, row2: <span class="pyKeyword">list</span>, row3: <span class="pyKeyword">list</span>, row4: <span class="pyKeyword">list</span>)<span class="returnType"><span class="pyKeyword">bool</span></span></span></h5>
                     <p>
-                        Determines if four rows are trichordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
+                        Determines if four twelve&hyphen;tone rows are trichordally combinatorial. The rows do not need to belong to the same row&hyphen;class.
                     </p>
                     <h5><span class="code">bip_n(imb_n: <span class="pyKeyword">list</span>)<span class="returnType">[<span class="pyKeyword">int</span>]</span></span></h5>
                     <p>
                         Gets the basic interval pattern (BIP) of a pcseg. Requires a list of imbricated set-classes
                         from the <span class="code">imb_n()</span> function.
                     </p>
-                    <h5><span class="code">create_ormap(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>: <span class="pyKeyword">int</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>: <span class="pyKeyword">int</span>}</span></h5>
+                    <h5><span class="code">*create_ormap(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>: <span class="pyKeyword">int</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>: <span class="pyKeyword">int</span>}</span></h5>
                     <p>
                         Creates an order map (ORMAP) of a pcseg. The map is a dictionary, with 
                         <span class="code pyClass">PitchClass12</span> or <span class="code pyClass">PitchClass24</span>
                         keys and <span class="code pyKeyword">int</span> values (which represent the index of the
                         pitch-class in the row).
                     </p>
-                    <h5><span class="code">find_otos(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">{<span class="pyClass">OTO</span>}</span></h5>
+                    <h5><span class="code">*find_otos(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">{<span class="pyClass">OTO</span>}</span></h5>
                     <p>
                         Finds all OTOs that transform <span class="code">pcseg1</span> so that it contains <span class="code">pcseg2</span>.
                         This function can be used to find individual pcs, subsegs, or the entire transformed pcseg.
@@ -221,28 +224,28 @@
                         The starting pc can be an <span class="code pyKeyword">int</span>
                         or <span class="code pyClass">PitchClass24</span>.
                     </p>
-                    <h5><span class="code">generate_random_pcseg_from_pcset(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*generate_random_pcseg_from_pcset(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Generates a pcseg from a provided pcset. The order of the pitch-classes will be random.
                         This is useful for experimenting with different orderings of a pcset.
                     </p>
-                    <h5><span class="code">get_intervals(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <h5><span class="code">*get_intervals(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         Gets the interval succession of a pcseg.
                     </p>
-                    <h5><span class="code">get_row_class(row: <span class="pyKeyword">list</span>)</span><span class="returnType code">{[<span class="pyClass">PitchClass12</span>]}</span></h5>
+                    <h5><span class="code">*get_row_class(row: <span class="pyKeyword">list</span>)</span><span class="returnType code">{[<span class="pyClass">PitchClass12</span>]}</span>or<span class="returnType2 code">{[<span class="pyClass">PitchClass24</span>]}</span></h5>
                     <p>
                         Gets the row&hyphen;class of a row, as a <span class="code pyKeyword">set</span>.
                     </p>
-                    <h5><span class="code">get_row_dsym(row: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">int</span></span></h5>
+                    <h5><span class="code">*get_row_dsym(row: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">int</span></span></h5>
                     <p>
                         Gets the degree of symmetry of a row.
                     </p>
-                    <h5><span class="code">imb_n(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">SetClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">SetClass24</span>]</span></h5>
+                    <h5><span class="code">*imb_n(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">SetClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">SetClass24</span>]</span></h5>
                     <p>
                         Gets the succession of imbricated set-classes of cardinality <i>n</i> from a pcseg.
                     </p>                    
-                    <h5><span class="code">invert(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*invert(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Inverts a pcset by using the M<sub>11</sub> or M<sub>23</sub> operations, depending on
                         whether the pcset contains <span class="code pyClass">PitchClass12</span> or 
@@ -256,9 +259,9 @@
                     <p>
                         Determines if a pcseg is a Link chord (a twelve&hyphen;tone row with the all&hyphen;trichord hexachord (ATH) as a contiguous subset).
                     </p>                    
-                    <h5><span class="code">is_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <h5><span class="code">*is_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
-                        Determines if a pcseg is a valid row.
+                        Determines if a pcseg is a valid row. A row needs to be 12 pcs long for a chromatic row, or 24 pcs long for a microtonal row, and cannot contain duplicates.
                     </p>                    
                     <h5><span class="code">is_row_generator(rgen: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
@@ -273,39 +276,39 @@
                     <p>
                         Creates a microtonal pcseg from one or more <span class="code pyKeyword">int</span> values.
                     </p>
-                    <h5><span class="code">multiply(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*multiply(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Multiplies a pcseg using the operator M<sub><i>n</i></sub>.
                     </p>
-                    <h5><span class="code">multiply_order(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*multiply_order(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Multiplies the order of a pcseg, mod the length of the pcseg.
                     </p>
-                    <h5><span class="code">ormap(row: <span class="pyKeyword">list</span>, ormap: <span class="pyKeyword">dict</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
+                    <h5><span class="code">*ormap(row: <span class="pyKeyword">list</span>, ormap: <span class="pyKeyword">dict</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
                         Applies an existing ORMAP to a row, and returns a list with the mapping of that row.
                     </p>
-                    <h5><span class="code">prot(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span></h5>
+                    <h5><span class="code">*prot(pcseg: <span class="pyKeyword">list</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{(<span class="pyClass">PitchClass12</span>, <span class="pyClass">PitchClass12</span>)}</span></h5>
                     <p>
                         Generates the protocol pairs of a pcseg. A protocol pair is an ordered pair of pitch-classes (<i>p</i>, <i>q</i>),
                         such that both <i>p</i> and <i>q</i> are in the pcseg, and 
                         <i>p</i> comes before <i>q</i> in the pcseg. A complete list of protocol pairs
                         unambiguously defines the ordering of a pcseg.
                     </p>
-                    <h5><span class="code">retrograde(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*retrograde(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Retrogrades a pcset. This is the same as <span class="code"><span class="pyKeyword">list</span>.reverse()</span>
                         but this function returns a copy rather than reversing the original list.
                     </p>
-                    <h5><span class="code">rotate(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*rotate(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Rotates a pcseg to the left <i>n</i> positions, using the operator r<sub><i>n</i></sub>.
                     </p>
-                    <h5><span class="code">transpose(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
+                    <h5><span class="code">*transpose(pcset: <span class="pyKeyword">set</span>, n: <span class="pyKeyword">int</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Transposes a pcseg using the operator T<sub><i>n</i></sub>.
                     </p>
-                    <h5><span class="code">transpositional_combination(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
+                    <h5><span class="code">*transpositional_combination(pcseg1: <span class="pyKeyword">list</span>, pcseg2: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span>or<span class="returnType2 code">[<span class="pyClass">PitchClass24</span>]</span></h5>
                     <p>
                         Transpositionally combines two pcsegs. This is Boulez&apos;s &ldquo;multiplication.&rdquo;
                     </p>
