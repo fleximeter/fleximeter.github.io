@@ -299,9 +299,17 @@
                     <p>
                         Gets the complement of a provided pcset. This is not the abstract complement of a set-class.
                     </p>
+                    <h5><span class="code">get_complement_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <p>
+                        Gets all <span class="code pyClass">UTO</span>s that map <span class="code">pcset</span> into its complement.
+                    </p>
                     <h5><span class="code">get_corpus(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass12</span>)}</span>or<span class="returnType2 code">{<span class="pyKeyword">frozenset</span>(<span class="pyClass">PitchClass24</span>)}</span></h5>
                     <p>
                         Gets all UTO transformations of a provided pcset, as a <span class="code pyKeyword">set</span>.
+                    </p>
+                    <h5><span class="code">get_self_map_utos(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">UTO</span>}</span></h5>
+                    <p>
+                        Gets all <span class="code pyClass">UTO</span>s that map <span class="code">pcset</span> into itself.
                     </p>
                     <h5><span class="code">invert(pcset: <span class="pyKeyword">set</span>)</span><span class="returnType code">{<span class="pyClass">PitchClass12</span>}</span>or<span class="returnType2 code">{<span class="pyClass">PitchClass24</span>}</span></h5>
                     <p>
