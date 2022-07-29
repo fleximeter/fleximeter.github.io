@@ -211,6 +211,12 @@
                         Generates a random all&hyphen;interval twelve&hyphen;tone row. The starting pc can be an <span class="code pyKeyword">int</span>
                         or <span class="code pyClass">PitchClass12</span>.
                     </p>
+                    <h5><span class="code">generate_random_all_trichord_babbitt_row(starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <p>
+                        Generates a random all&hyphen;trichord twelve&hyphen;tone row after Milton Babbitt. The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass12</span>. Note that this is not a true all&hyphen;trichord row; set&hyphen;classes
+                        [036] and [048] are excluded, and rotation is not considered.
+                    </p>
                     <h5><span class="code">generate_random_all_trichord_row(starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
                     <p>
                         Generates a random all&hyphen;trichord twelve&hyphen;tone row. The starting pc can be an <span class="code pyKeyword">int</span>
@@ -235,6 +241,11 @@
                     <p>
                         Generates a pcseg from a provided pcset. The order of the pitch-classes will be random.
                         This is useful for experimenting with different orderings of a pcset.
+                    </p>
+                    <h5><span class="code">generate_random_ten_trichord_row(starting_pc=<span class="pyKeyword">None</span>)</span><span class="returnType code">[<span class="pyClass">PitchClass12</span>]</span></h5>
+                    <p>
+                        Generates a random ten&hyphen;trichord twelve&hyphen;tone row. The starting pc can be an <span class="code pyKeyword">int</span>
+                        or <span class="code pyClass">PitchClass12</span>. Rotation is not considered.
                     </p>
                     <h5><span class="code">*get_intervals(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code">[<span class="pyKeyword">int</span>]</span></h5>
                     <p>
