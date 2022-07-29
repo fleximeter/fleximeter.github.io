@@ -262,6 +262,11 @@
                     <p>
                         Determines if a pcseg is a valid all&hyphen;interval row.
                     </p>
+                    <h5><span class="code">is_all_trichord_babbitt_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <p>
+                        Determines if a pcseg is a valid Babbitt &ldquo;all&hyphen;trichord&rdquo; row. This is a ten&hyphen;trichord row that does not
+                        contain set&hyphen;classes [036] and [048] as imbricated trichords.
+                    </p>
                     <h5><span class="code">is_all_trichord_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
                     <p>
                         Determines if a pcseg is a valid all&hyphen;trichord row (not a Babbitonian all&hyphen;trichord row).
@@ -279,6 +284,10 @@
                         Determines if a provided row generator (rgen) can generate a valid row.
                         A row generator is a succession of 11 intervals.
                     </p>                    
+                    <h5><span class="code">is_ten_trichord_row(pcseg: <span class="pyKeyword">list</span>)</span><span class="returnType code"><span class="pyKeyword">bool</span></span></h5>
+                    <p>
+                        Determines if a pcseg is a valid ten&hyphen;trichord row. A ten&hyphen;trichord row contains ten unique imbricated trichords (not counting rotations).
+                    </p>
                     <h5><span class="code">make_pcseg12(*args)<span class="returnType">[<span class="pyClass">PitchClass12</span>]</span></span></h5>
                     <p>
                         Creates a chromatic pcseg from one or more <span class="code pyKeyword">int</span> values.
